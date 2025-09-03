@@ -20,7 +20,6 @@ var category_id = ""
 var formData = []
 export default function Latest() {
     const { state } = useLocation();
-    const [allCategoryList, setAllCategoryList] = useState([]);
     const [news, setNews] = useState([]);
 
     useEffect(() => {
@@ -64,35 +63,8 @@ export default function Latest() {
                     }, 1000);
                 });
         }
-        axios
-            .get(`${process.env.REACT_APP_EN_API_URL}category`)
-            .then(({ data }) => {
-                setAllCategoryList(data.categories);
-            });
-        // const timer = setTimeout(() => { window.location.reload(1); }, 300000);
-        // return () => clearTimeout(timer);
     }, [state]);
 
-    const resultSubmit = (e) => {
-        e.preventDefault()
-        start_date = e.target.start_date.value;
-        end_date = e.target.end_date.value;
-        category_id = e.target.category_id.value;
-        offset = 0
-        formData = { 'start_date': start_date, 'end_date': end_date, 'category_id': category_id, 'limit': limit, 'offset': offset }
-        axios
-            .post(`${process.env.REACT_APP_EN_API_URL}archive`, formData)
-            .then(({ data }) => {
-                setNews(data.data);
-                if (data.data.length < limit) {
-                    showMore = false
-                }
-                setTimeout(function () {
-                    lazyloaded = false
-                    ForLazyLoaderImg(lazyloaded)
-                }, 1000);
-            });
-    }
 
     const toggleButtonState = (e) => {
         e.preventDefault()

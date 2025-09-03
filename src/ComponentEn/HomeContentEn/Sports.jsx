@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
 import { ForLazyLoaderImg, scrollTop } from "../AllFunctions";
 import { FaPlay } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-// const toBengaliNumber = (number) => {
-//     const bengaliDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-//     return number
-//         .toString()
-//         .split("")
-//         .map(digit => bengaliDigits[parseInt(digit)])
-//         .join("");
-// };
 var lazyloaded = false
-let subName = ''
+// let subName = ''
 
 export default function Sports() {
     // let { catSlug } = useParams();
     // const [catName, setcatName] = useState([])
-    const [SubcatName, setSubcatName] = useState([])
+    // const [SubcatName, setSubcatName] = useState([])
     const [List1, setList1] = useState([])
     const [List2, setList2] = useState([])
     const [List3, setList3] = useState([])
@@ -43,7 +35,7 @@ export default function Sports() {
                 .then(({ data }) => {
                     if (data.category) {
                         // setcatName(data.category)
-                        setSubcatName(data.category.subCategories)
+                        // setSubcatName(data.category.subCategories)
 
                         setTimeout(function () {
                             lazyloaded = false
