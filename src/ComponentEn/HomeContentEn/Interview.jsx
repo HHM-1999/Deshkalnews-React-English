@@ -1,7 +1,8 @@
+import { ForLazyLoaderImg, scrollTop } from "../AllFunctions";
+import { FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ForLazyLoaderImg, scrollTop } from "../../ComponentEn/AllFunctions";
 
 var lazyloaded = false
 export default function Interview() {
@@ -10,11 +11,11 @@ export default function Interview() {
     try {
         useEffect(() => {
             axios
-                .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateSubCategory26.json `)
+                .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateSubCategory26.json`)
                 .then(({ data }) => {
                     if (data.length > 0) {
                         setList1(data[0]);
-                        setList2(data.slice(1, 2))
+                        setList2(data.slice(1, 3))
                         setTimeout(function () {
                             lazyloaded = false
                             ForLazyLoaderImg(lazyloaded)
@@ -25,80 +26,75 @@ export default function Interview() {
 
         return (
             <>
-
-                <div className="sakkhatkar">
+                <div className="job-area-news">
                     <div className="row">
                         <div className="col-12">
                             <div className="section-heading">
-                                <h2><i className="fa-solid fa-chevron-right"></i><Link to="/opinion/interview" onClick={scrollTop}>Interview</Link></h2>
+                                <h2><i className="fa-solid fa-chevron-right"></i><Link to='/opinion/interview' onClick={scrollTop}>Interview</Link></h2>
                             </div>
                         </div>
                     </div>
-                    <div className="Common-list">
-                        <div className="Common-list-details">
-                            <Link to={"/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
-                                <div className="row">
-                                    <div className="col-lg-12 col-12 Imgresize">
-                                        <picture>{List1.ImageBgPath == null ?
-                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_LAZYL_IMG} alt={List1.DetailsHeading} title={List1.DetailsHeading} className="img-fluid img100" style={{width: "800px", height:"100%"}}  /> :
-                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + List1.ImageBgPath} alt={List1.DetailsHeading} title={List1.DetailsHeading} className="img-fluid img100" style={{width: "800px", height:"100%"}} />}</picture>
 
-                                    </div>
-                                    <div className="col-lg-12 col-12">
-                                        <div className="Desc">
-                                            {List1.AltHomeTitle ?
-                                                <h3 className="Title">{List1.AltHomeTitle}</h3> :
-                                                <>
-                                                    {List1.ContentSubHeading === null || List1.ContentSubHeading === undefined ?
-                                                        <h3 className="Title">{List1.DetailsHeading}</h3> :
-                                                        <h3 className="Title"> <span className="subHeading">{List1.ContentSubHeading + " / "}</span> {List1.DetailsHeading}</h3>
+                    <div className="CommonLead">
+                        <Link to={"/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
+                            <div className="Imgresize">
+                                <picture>
+                                    {List1.ImageBgPath == null ?
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_LAZYL_IMG} alt={List1.DetailsHeading} title={List1.DetailsHeading} className="img-fluid img100" style={{width: "100%", height:"auto"}} /> :
+                                        <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + List1.ImageBgPath} alt={List1.DetailsHeading} title={List1.DetailsHeading} className="img-fluid img100" style={{width: "100%", height:"auto"}} />}
+                                    {List1.ShowVideo === 1 && <div className="card-video-icon big transition"><FaPlay /></div>}
+                                </picture>
+                            </div>
+                            <div className="Desc">
+                                {List1.AltHomeTitle ?
+                                    <h2 className="Title"> {List1.AltHomeTitle}
+                                    </h2> :
+                                    <h2 className="Title"> {List1.DetailsHeading}
+                                    </h2>
+                                }
+
+                            </div>
+                        </Link>
+                    </div>
+                    {
+                        List2.map((item, index) => {
+                            return (
+                                <div className="CommonLeadList" key={index}>
+                                    <Link to={"/details/" + item.Slug + "/" + item.ContentID} onClick={scrollTop} >
+                                        <div className="row">
+                                            <div className="col-lg-6 col-5">
+                                                <div className="Imgresize">
+                                                    <picture>
+                                                        {item.ImageSmPath == null ?
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_LAZYL_IMG} alt={item.DetailsHeading} title={item.DetailsHeading} className="img-fluid img100" style={{width: "100%", height:"auto"}} /> :
+                                                            <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + item.ImageSmPath} alt={item.DetailsHeading} title={item.DetailsHeading} className="img-fluid img100" style={{width: "100%", height:"auto"}} />}
+                                                        {item.ShowVideo === 1 && <div className="card-video-icon big transition"><FaPlay /></div>}
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-6 col-7">
+                                                <div className="Desc">
+                                                    {item.AltHomeTitle ?
+                                                        <h2 className="Title"> {item.AltHomeTitle}
+                                                        </h2> :
+                                                        <h2 className="Title"> {item.DetailsHeading}
+                                                        </h2>
                                                     }
-                                                </>
-                                            }
 
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
-                            </Link>
-                        </div>
+                            )
+                        })
+                    }
+                    <div className="seeMore">
+                        <Link className="btn btnMore" to="/opinion/interview" onClick={scrollTop}>More...</Link>
                     </div>
-                    {List2.map((nc, i) => {
-                        return (
-                            <div className="CommonLeadList2" key={i}>
-                                <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
-                                    <div className="row">
-                                        <div className="col-lg-5 col-5">
-                                            <div className="Imgresize">
-                                                <picture>{nc.ImageThumbPath == null ?
-                                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_LAZYL_IMG} alt={nc.DetailsHeading} title={nc.DetailsHeading} className="img-fluid img100" style={{width: "120px", height:"100%"}}  /> :
-                                                    <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageThumbPath} alt={nc.DetailsHeading} title={nc.DetailsHeading} className="img-fluid img100" style={{width: "120px", height:"100%"}} />}</picture>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-7 col-7">
-                                            <div className="Desc">
-                                                {nc.AltHomeTitle ?
-                                                    <h2 className="Title">{nc.AltHomeTitle}</h2> :
-                                                    <>
-                                                        {nc.ContentSubHeading === null || nc.ContentSubHeading === undefined ?
-                                                            <h2 className="Title">{nc.DetailsHeading}</h2> :
-                                                            <h2 className="Title"> <span className="subHeading">{nc.ContentSubHeading + " / "}</span> {nc.DetailsHeading}</h2>
-                                                        }
-                                                    </>
-                                                }
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </Link>
-                            </div>
-                        )
-                    })}
-
                 </div>
             </>
         )
-
     }
     catch (error) {
         console.log(error);

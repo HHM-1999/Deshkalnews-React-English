@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import Agriculture from './HomeContentEn/Agriculture';
-import Bangladesh from './HomeContentEn/Bangladesh';
 import Climate from './HomeContentEn/Climate';
 import Economy from './HomeContentEn/Economy';
 import Entertainment from './HomeContentEn/Entertainment';
@@ -15,9 +14,14 @@ import ScienceandTech from './HomeContentEn/ScienceandTech';
 import Sports from './HomeContentEn/Sports';
 import VideoLead from './HomeContentEn/VideoLead';
 import Weather from './HomeContentEn/Weather';
-import World from './HomeContentEn/World';
 import EducationCampus from './HomeContentEn/EducationCampus';
 import HomeLdjsonEn from './HomeLdjsonEn';
+import Politics from './HomeContentEn/Politics';
+import IntlRelations from './HomeContentEn/IntlRelations';
+import World2 from './HomeContentEn/World2';
+import FactCheck from './HomeContentEn/FactCheck';
+import Business from './HomeContentEn/Business';
+import SpecialReport from './HomeContentEn/Special-Report';
 
 
 
@@ -42,7 +46,7 @@ export default function HomeEn() {
                                 <VideoLead />
                             </div>
                             <div className="col-lg-3">
-                                <Interview />
+                                <FactCheck />
                             </div>
                         </div>
                     </div>
@@ -61,10 +65,12 @@ export default function HomeEn() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 border-right-inner">
-                                <Bangladesh />
+                                {/* <Bangladesh /> */}
+                                <Politics />
                             </div>
                             <div className="col-lg-6">
-                                <World />
+                                {/* <World /> */}
+                                <IntlRelations />
                             </div>
                         </div>
                     </div>
@@ -87,46 +93,33 @@ export default function HomeEn() {
                             </div>
                             <div className="col-lg-3">
                                 {/* <CricketSeriesEvent /> */}
-                                <Economy />
+                                {/* <Economy /> */}
+                                <Business />
                                 <EducationCampus />
                             </div>
 
                         </div>
                     </div>
                 </section>
-                {/* <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
-                                <img src="/media/Advertisement/Advertisement(970X90).png" alt="" title=""
-                                    className="img-fluid" />
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-                <Entertainment />
-                {/* <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
-                                <img src="/media/Advertisement/Advertisement(970X90).png" alt="" title=""
-                                    className="img-fluid" />
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
+                {/* <Entertainment /> */}
+                <World2 />
                 <Opinion />
-                <Photos />
-                {/* <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="DHomeAdd970X90 d-flex justify-content-center mt-4 mb-2">
-                                <img src="/media/Advertisement/Advertisement(970X90).png" alt="" title=""
-                                    className="img-fluid" />
+                <section className="saradesh-area-job">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-9 border-right-inner">
+                            <Entertainment />
+                            </div>
+                            <div className="col-lg-3">
+                            <Interview />
+                                {/* <Job /> */}
+                                {/* <Climate /> */}
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </section>
+               
+                <Photos />
                 <section className="health-bissho-area">
                     <div className="container">
                         <div className="row">
@@ -177,10 +170,11 @@ export default function HomeEn() {
                     <div className="container">
                         <div className="row mb-4">
                             <div className="col-lg-9 border-right-inner">
-                                <Religion />
+                               <SpecialReport />
                             </div>
                             <div className="col-lg-3">
-                                <Weather />
+                                {/* <Weather /> */}
+                                <Religion />
                             </div>
                         </div>
                     </div>

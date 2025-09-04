@@ -70,7 +70,7 @@ export default function HeaderEn() {
                 <div className="col-12 col-md-6 d-flex align-items-start justify-content-start">
                   <div className="DLogo">
                     <a href="/"><img className="img-fluid img100" src={Logo}
-                      alt="DeshkalNews.com :: দেশকালনিউজ.কম" title="DeshkalNews.com :: দেশকালনিউজ.কম" style={{width: "300px", height:"35px"}} /></a>
+                      alt="DeshkalNews.com :: দেশকালনিউজ.কম" title="DeshkalNews.com :: দেশকালনিউজ.কম" style={{ width: "300px", height: "35px" }} /></a>
                   </div>
                 </div>
                 <div className="col-3 col-md-6 d-flex align-items-center justify-content-end">
@@ -131,9 +131,9 @@ export default function HeaderEn() {
                           </div>
                           <div className="offcanvas-body">
                             <ul className="navbar-nav ">
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/bangladesh">Bangladesh
+                              {/* <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/bangladesh">Bangladesh
                               </a>
-                              </li>
+                              </li> */}
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/government">Government
                               </a>
                               </li>
@@ -229,15 +229,15 @@ export default function HeaderEn() {
                         <li className="nav-item dropdown">
                           <Link onClick={scrollTop} to="/news" className="nav-link dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">News</Link>
                           <ul className="dropdown-menu">
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/bangladesh">Bangladesh</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/national">National</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/crime">Crime</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/law-and-justice">Law and Justice</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/capital-affairs ">Capital Affairs</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/education">Education</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/local-coverage">Local Coverage</Link></li>
+                            {/* <li><Link onClick={scrollTop} className="dropdown-item" to="/news/bangladesh">Bangladesh</Link></li> */}
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/government">Government</Link></li>
                             <li><Link onClick={scrollTop} className="dropdown-item" to="/news/election">Election</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/spacial-report">Special Report</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/capital-affairs ">Capital Affairs</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/local-coverage">Local Coverage</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/law-and-justice">Law and Justice</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/crime">Crime</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/education">Education</Link></li>
+                            {/* <li><Link onClick={scrollTop} className="dropdown-item" to="/news/spacial-report">Special Report</Link></li> */}
 
 
                             {/* <li><Link onClick={scrollTop} className="dropdown-item" to="/bangladesh/government">Government</Link></li>
@@ -261,11 +261,13 @@ export default function HeaderEn() {
                             <li><Link onClick={scrollTop} className="dropdown-item" to="/business/banking">Banking</Link></li>
                             <li><Link onClick={scrollTop} className="dropdown-item" to="/business/consumer-market">Consumer Market</Link></li>
                             <li><Link onClick={scrollTop} className="dropdown-item" to="/business/trade-and-investment">Trade & Investment</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/aviation-and-tourism ">Aviation & Tourism </Link></li>
                           </ul>
                         </li>
                         <li className="nav-item"><Link className="nav-link" to="/sports" onClick={scrollTop}>Sports </Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/entertainment" onClick={scrollTop}>Entertainment </Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/feature" onClick={scrollTop}>Feature </Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/fact-check" onClick={scrollTop}>Fact Check </Link></li>
+                        {/* <li className="nav-item"><Link className="nav-link" to="/entertainment" onClick={scrollTop}>Entertainment </Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/feature" onClick={scrollTop}>Feature </Link></li> */}
 
 
 
@@ -295,18 +297,18 @@ export default function HeaderEn() {
                             <div className="row w-100 ">
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
+                                  <li><Link onClick={scrollTop} className="dropdown-item" to="/news/spacial-report">Special Report</Link></li>
+                                  <li><Link className="dropdown-item" to="/opinion " onClick={scrollTop}>Opinion</Link></li>
                                   <li><Link className="dropdown-item" to="/health" onClick={scrollTop}>Health</Link></li>
-                                  <li><Link className="dropdown-item" to="/science-and-tech" onClick={scrollTop}>Science & Tech</Link></li>
-
-
-
                                 </ul>
                               </div>
 
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
-                                  <li><Link className="dropdown-item" to="/weather-and-enviroment" onClick={scrollTop}>Weather & Environment</Link></li>
-                                  <li><Link className="dropdown-item" to="/faith-and-religion" onClick={scrollTop}>Faith and Religion</Link></li>
+                                  <li><Link className="dropdown-item" to="/fact-check" onClick={scrollTop}>Fact Check</Link></li>
+                                  <li ><Link className="dropdown-item" to="/migrant" onClick={scrollTop}>Migrant</Link></li>
+                                  <li><Link className="dropdown-item" to="/agro" onClick={scrollTop}>Agro </Link></li>
+
                                   {/* <li><Link className="dropdown-item" to="/agriculture" onClick={scrollTop}>Agriculture</Link></li> */}
 
 
@@ -316,14 +318,16 @@ export default function HeaderEn() {
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
 
-                                  <li ><Link className="dropdown-item" to="/migrant" onClick={scrollTop}>Migrant </Link></li>
+                                  <li><Link className="dropdown-item" to="/science-and-tech" onClick={scrollTop}>Science & Tech</Link></li>
+                                  <li><Link className="dropdown-item" to="/faith-and-religion" onClick={scrollTop}>Faith & Religion</Link></li>
+                                  <li><Link className="dropdown-item" to="/weather-and-enviroment" onClick={scrollTop}>Weather & Environment</Link></li>
 
-                                  <li><Link className="dropdown-item" to="/agro" onClick={scrollTop}>Agro </Link></li>
 
                                 </ul>
                               </div>
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
+                                  <li><Link className="dropdown-item" to="/entertainment/art-and-literature" onClick={scrollTop}>Art & Literature</Link></li>
                                   <li ><Link className="dropdown-item" to="/media-affairs" onClick={scrollTop}>Media Affairs </Link></li>
                                   <li><Link className="dropdown-item" to="/opinion/interview" onClick={scrollTop}>Interview </Link></li>
 
@@ -331,23 +335,12 @@ export default function HeaderEn() {
                               </div>
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
-                                  <li><Link className="dropdown-item" to="/entertainment/art-and-literature" onClick={scrollTop}>Art & Literature</Link></li>
-                                  <li><Link className="dropdown-item" to="/opinion " onClick={scrollTop}>Opinion  </Link></li>
-
-                                </ul>
-                              </div>
-                              <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
-                                <ul className="nav flex-column">
                                   <li><Link className="dropdown-item" to="/lifestyle " onClick={scrollTop}>Lifestyle  </Link></li>
-
-                                </ul>
-                              </div>
-                              <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
-                                <ul className="nav flex-column">
 
                                   <li><Link className="dropdown-item" to="/archives" onClick={scrollTop}>Archives</Link></li>
                                 </ul>
                               </div>
+
                             </div>
                           </div>
                         </li>

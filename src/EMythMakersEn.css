@@ -1,5 +1,5 @@
 body .eng-site {
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif !important;
 	font-size: 16px;
 	background: #fff;
 	color: #555;
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif !important;
 	margin-bottom: 0;
 	font-size: 17px;
 	line-height: 1.43;
@@ -49,7 +49,7 @@ p {
 	line-height: 28px;
 	color: #333;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .sports-area .Common-listBox-item .Title {
@@ -62,7 +62,7 @@ p {
 	line-height: 26px;
 	color: #333;
 	font-weight: 500;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .eng-site .Brief p {
@@ -75,7 +75,7 @@ p {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 5px;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 /* header */
@@ -88,10 +88,10 @@ p {
 }
 
 .eng-site .DHeaderNav .navbar-nav {
+	display: flex;
 	justify-content: end;
 	gap: 12px;
-	display: flex;
-	padding: 0
+	padding: 0 0px 0 40px;
 }
 
 .eng-site .sticky .DHeaderNav .navbar-expand-lg .navbar-nav {
@@ -174,17 +174,28 @@ p {
 }
 
 .menu-right-item.bn {
-	font-family: "SolaimanLipi" !important
+	font-family: "SolaimanLipi" !important;
+	background: #191919;
+	border-radius: 5px;
+	border: 1px solid #121212;
 }
 
+
 .header-meta-link .bn i {
-	color: #434343;
+	color: #f0f0f0;
 	padding-right: 2px;
+}
+.menu-right-item.bn a{
+	color: #fff;
+	font-size: 15px;
+}
+.menu-right-item.bn:hover a{
+	color: #ddd;
 }
 
 .eng-site .header-meta-link ul li {
 	display: inline-block;
-	padding: 0 10px;
+	padding: 2px 8px;
 	position: relative;
 }
 
@@ -227,7 +238,7 @@ p {
 	display: block;
 	font-weight: 700;
 	margin: 20px 0;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .eng-site .DTitle:before {
@@ -341,13 +352,14 @@ p {
 	color: #181819;
 	font-size: 22px;
 	font-weight: bold;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
+
 .eng-site .contact-area .SectionTitle h1 {
 	color: #181819;
 	font-size: 22px;
 	font-weight: bold;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 /* archieve page */
@@ -415,14 +427,14 @@ p {
 .DTitleEng,
 .DTitleEng a {
 	color: #F00000;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Noto Serif", Georgia, serif
 
 }
 
 .DTitleEng,
 .DTitleEng a:hover {
 	color: #555;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Noto Serif", Georgia, serif
 
 }
 
@@ -449,7 +461,7 @@ p {
 	font-size: 22px;
 	line-height: 28px;
 	font-weight: 600;
-	font-family: 'Roboto', sans-serif
+	font-family: "Noto Serif", Georgia, serif
 }
 
 .DCatLeadTop:hover .Desc .Title {
@@ -473,7 +485,7 @@ p {
 
 .eng-site .DCatTop2 .Desc .Title {
 	font-size: 19px;
-	font-family: 'Roboto', sans-serif
+	font-family:"Noto Serif", Georgia, serif
 }
 
 .DCatTop2:hover .Desc .Title {
@@ -546,7 +558,7 @@ p {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-family: 'Roboto', sans-serif
+	font-family: "Noto Serif", Georgia, serif
 }
 
 .DCatTop3 {
@@ -562,7 +574,7 @@ p {
 	font-weight: 600;
 	line-height: 26px;
 	font-size: 22px;
-	font-family: 'Roboto', sans-serif
+	font-family:"Noto Serif", Georgia, serif
 }
 
 
@@ -589,7 +601,7 @@ p {
 .eng-site .DCatNewsList .Title {
 	font-size: 17px;
 	line-height: 27px;
-	font-family: 'Roboto', sans-serif
+	font-family: "Noto Serif", Georgia, serif
 }
 
 .DCatNewsList .Desc {
@@ -647,7 +659,7 @@ p {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 
 }
 
@@ -699,7 +711,7 @@ p {
 	font-weight: bold;
 	line-height: 34px;
 	position: relative;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .eng-site .section-heading h2::before {
@@ -736,14 +748,15 @@ p {
 	font-weight: bold;
 	line-height: 40px;
 	margin-top: 8px;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
+
 .eng-site .DSecTitle h1 {
 	font-size: 24px;
 	font-weight: bold;
 	line-height: 40px;
 	margin-top: 8px;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .DetailsTop-Form .form-control:focus {
@@ -1098,7 +1111,7 @@ p {
 	line-height: 22px;
 	padding: 8px 5px 6px;
 	text-align: center;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .DLeftSideNews {
@@ -1131,7 +1144,7 @@ p {
 	line-height: 28px;
 	padding-bottom: 2px;
 	color: #ED1C24;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 	/*"Noto Serif Bengali"*/
 	;
 }
@@ -1151,7 +1164,7 @@ p {
 	line-height: 27px;
 	margin: 0px 0 15px;
 	color: #555;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 	;
 	font-style: italic;
 }
@@ -1204,7 +1217,7 @@ p {
 	padding-bottom: 15px;
 	word-wrap: break-word;
 	margin-top: 20px;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 
 
 }
@@ -1218,7 +1231,7 @@ p {
 .eng-site #contentDetails p a {
 	font-size: 18px !important;
 	line-height: 28px !important;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 	/* padding: 10px 0 !important; */
 	padding-bottom: 15px;
 	color: #001D9B;
@@ -1227,7 +1240,7 @@ p {
 
 .eng-site #contentDetails p {
 	text-align: justify !important;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 .eng-site #contentDetails p span {
@@ -1361,7 +1374,7 @@ p {
 	position: relative;
 	transform: skewX(-15deg);
 	z-index: 1;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: "Noto Serif", Georgia, serif!important;
 }
 
 @media screen and (max-width:768px) {
@@ -1381,11 +1394,13 @@ p {
 		-webkit-line-clamp: 3;
 		margin-top: 10px;
 	}
-	.eng-site .sakkhatkar .CommonLeadList2 img{
+
+	.eng-site .sakkhatkar .CommonLeadList2 img {
 		width: 100% !important;
 	}
-	.eng-site .CommonLead3 img{
+
+	.eng-site .CommonLead3 img {
 		width: 100% !important;
 	}
-	
+
 }
