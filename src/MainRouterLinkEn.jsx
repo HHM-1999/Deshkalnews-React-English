@@ -20,6 +20,8 @@ import TagPage from './ComponentEn/TagsEn/TagPage';
 import Terms from './ComponentEn/Terms';
 import AllWriters from './ComponentEn/WritersEn/AllWriters';
 import WritersPage from './ComponentEn/WritersEn/WritersPage';
+import VideoGallery from './ComponentEn/Video/VideoGallery'
+import VideoDetails from './ComponentEn/Video/VideoDetails'
 import './EMythMakersEn.css';
 
 
@@ -38,6 +40,8 @@ export default function MainRouterLinkEn() {
                 <Route path="/:catSlugEn/:subCatSlug" element={<SubCategory />} />
                 <Route path="/photo/" element={<PhotoGallery />} />
                 <Route path="/photo/:AlbumID" element={<DetailsPhotoFeature />} />
+                <Route path="/videos" element={<VideoGallery />} />
+                <Route path="/videos/:vdoID" element={<VideoDetails />} />
                 <Route path="/tags/:TagTitle" element={<TagPage />} />
                 <Route path="/tags" element={<AllTagList />} />
                 <Route path="/writers/:WriterSlug" element={<WritersPage />} />

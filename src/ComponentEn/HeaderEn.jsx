@@ -350,6 +350,7 @@ export default function HeaderEn() {
                   </div>
                   <div className="menu-right header-meta-link">
                     <ul>
+                    <li className="menu-right-item"><Link to="/videos" onClick={scrollTop}><i className="fa-regular fa-circle-play"></i>Videos</Link></li>
                       <li className="menu-right-item"><Link to="/photo" onClick={scrollTop}><i className="fa-solid fa-camera"></i>
                         Photo</Link></li>
                       <li className="menu-right-item bn"><Link to="/bangla" onClick={scrollTop}><i className="fa-solid fa-globe"></i>

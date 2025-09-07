@@ -20,8 +20,13 @@ import Politics from './HomeContentEn/Politics';
 import IntlRelations from './HomeContentEn/IntlRelations';
 import World2 from './HomeContentEn/World2';
 import FactCheck from './HomeContentEn/FactCheck';
-import Business from './HomeContentEn/Business';
+// import Business from './HomeContentEn/Business';
 import SpecialReport from './HomeContentEn/Special-Report';
+import LocalCoveraga from './HomeContentEn/LocalCoveraga'
+import Migrant from './HomeContentEn/Migrant';
+import Economy from './HomeContentEn/Economy';
+import VideoHome from './HomeContentEn/VideoHome'
+import VideoHomeMobile from './HomeContentEn/VideoHomeMobile'
 
 
 
@@ -93,8 +98,8 @@ export default function HomeEn() {
                             </div>
                             <div className="col-lg-3">
                                 {/* <CricketSeriesEvent /> */}
-                                {/* <Economy /> */}
-                                <Business />
+                                <Economy />
+                                {/* <Business /> */}
                                 <EducationCampus />
                             </div>
 
@@ -103,22 +108,34 @@ export default function HomeEn() {
                 </section>
                 {/* <Entertainment /> */}
                 <World2 />
+                <section className="saradesh-area-job">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-9 border-right-inner">
+                                <LocalCoveraga />
+                            </div>
+                            <div className="col-lg-3">
+                                <Migrant />
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <Opinion />
                 <section className="saradesh-area-job">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-9 border-right-inner">
-                            <Entertainment />
+                                <Entertainment />
                             </div>
                             <div className="col-lg-3">
-                            <Interview />
+                                <Interview />
                                 {/* <Job /> */}
                                 {/* <Climate /> */}
                             </div>
                         </div>
                     </div>
                 </section>
-               
+
                 <Photos />
                 <section className="health-bissho-area">
                     <div className="container">
@@ -170,7 +187,7 @@ export default function HomeEn() {
                     <div className="container">
                         <div className="row mb-4">
                             <div className="col-lg-9 border-right-inner">
-                               <SpecialReport />
+                                <SpecialReport />
                             </div>
                             <div className="col-lg-3">
                                 {/* <Weather /> */}
@@ -179,6 +196,12 @@ export default function HomeEn() {
                         </div>
                     </div>
                 </section>
+                <div className="MblHide">
+                    <VideoHome />
+                </div>
+                <div className="MblShow">
+                    <VideoHomeMobile />
+                </div>
             </main>
 
         </>

@@ -16,7 +16,7 @@ export default function Economy() {
 
         useEffect(() => {
             axios
-                .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateCategory4.json`)
+                .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateSubCategory41.json`)
                 .then(({ data }) => {
                     if (data.length > 0) {
                         setList2(data[0]);
