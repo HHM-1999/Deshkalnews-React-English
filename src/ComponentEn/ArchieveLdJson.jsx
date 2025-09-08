@@ -10,7 +10,7 @@ export default function ArchiveLdJson() {
                     "@context": "https://schema.org",
                     "@type": "CollectionPage",
                     "name": "Archive | All important old news and records",
-                    "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}english/archives",
+                    "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}archives",
                     "breadcrumb": {
                       "@type": "BreadcrumbList",
                       "itemListElement": [{
@@ -22,7 +22,7 @@ export default function ArchiveLdJson() {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Archive",
-                        "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}english/archives"
+                        "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}archives"
                       }]
                     }
                 }
