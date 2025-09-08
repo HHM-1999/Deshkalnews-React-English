@@ -10,7 +10,7 @@ export default function LatestLdJson() {
                     "@context": "https://schema.org",
                     "@type": "CollectionPage",
                     "name": "Latest news, Breaking news | DeshkalNews.com",
-                    "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}english/latest",
+                    "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}latest",
                     "breadcrumb": {
                         "@type": "BreadcrumbList",
                         "itemListElement": [
@@ -18,13 +18,13 @@ export default function LatestLdJson() {
                                 "@type": "ListItem",
                                 "position": 1,
                                 "name": "Home",
-                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}english/"
+                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}"
                             },
                             {
                                 "@type": "ListItem",
                                 "position": 2,
                                 "name": "Latest",
-                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}english/latest"
+                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}latest"
                             }
                         ]
                     }
