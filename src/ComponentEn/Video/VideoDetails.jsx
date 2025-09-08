@@ -4,7 +4,8 @@ import DocumentTitle from 'react-document-title';
 import { Link, useParams } from 'react-router-dom';
 import { ForLazyLoaderImg, formatDateToBengali, scrollTop } from '../AllFunctions';
 import ErrorPage from "../ErrorPageEn";
-// import SocialShare from "../s";
+import SocialShare from './SocialShare';
+
 
 var lazyloaded = false
 export default function VideoDetails() {
@@ -80,33 +81,22 @@ export default function VideoDetails() {
                                         <div className="mt-4 d-contents d-sm-flex justify-content-between align-items-center">
                                             {VideoDetails.create_date ? 
                                              <p className="VideoPublishDate mt-2"> <span>Published Date:</span> {VideoDetails.create_date ? ((VideoDetails.create_date).toString()) : ""} </p> : 
-                                             <p className="VideoPublishDate mt-2"> <span>Published Date:</span> {VideoDetails.update_date ? ((VideoDetails.update_date	).toString()) : ""} </p>}
+                                             <p className="VideoPublishDate mt-2"> <span>Published Date:</span> {VideoDetails.update_date ? ((VideoDetails.update_date).toString()) : ""} </p>}
                                            
-                                            {/* <SocialShare title={VideoDetails.WebTVHeadingEn} /> */}
+                                            <SocialShare title={VideoDetails.WebTVHeadingEn} />
                                         </div>
                                         {VideoDetails.Remarks &&
                                             <div className="Brief"><p dangerouslySetInnerHTML={{ __html: VideoDetails.Remarks }} /></div>
                                         }
                                     </div>
-
-                                    {/* <div className="col-lg-4 col-12">
-                                        
-                                        <div className=" d-flex  justify-content-center">
-                                            <Link to="#">
-                                                <img src={Ads} alt="Header Advertisement" title="Header Advertisement" className="img-fluid img100" />
-                                            </Link>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
 
                             <div className="DVideoCatListTop4 mb-5">
                                 <div className="CategoryPageTitleTop">
                                     <h2 className="MoreTitle">
-
                                         <span className="ColorBox"></span>
                                         <span>More Videos</span>
-
                                     </h2>
                                 </div>
                                 <div className="DCatTop4">
@@ -155,7 +145,6 @@ export default function VideoDetails() {
                                                             </div>
                                                         </Link>
                                                     </div>
-
                                                 </div>
                                             )
                                         })}

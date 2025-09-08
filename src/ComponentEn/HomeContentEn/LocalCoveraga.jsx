@@ -11,7 +11,7 @@ export default function LocalCoverage() {
     useEffect(() => {
 
         axios
-            .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateCategory5.json`)
+            .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateCategory37.json`)
             .then(({ data }) => {
                 if (data.length > 0) {
                     setList1(data[0] === false);

@@ -45,6 +45,7 @@ export default function Details() {
     const [catPopular, setCatPopular] = useState([])
     const [writer, setWriter] = useState([]);
     const [heading, setHeading] = useState([]);
+    const [openIndex, setOpenIndex] = useState(null);
     // const [loading, setLoading] = useState(true);
     // const [isLoading, setisLoading] = useState(true)
     // const [isLoading, setisLoading] = useState(true)
@@ -69,7 +70,7 @@ export default function Details() {
                     // setSlug(data.category.Slug)
                     // setLoading(false);
                     catID = data.category.CategoryID
-                    DisplayCatName=data.category.DisplayCatName
+                    DisplayCatName = data.category.DisplayCatName
                     try {
                         axios
                             .get(`${process.env.REACT_APP_EN_API_URL}category-latest-content/${catID}/4`)
@@ -109,6 +110,8 @@ export default function Details() {
                     .then(({ data }) => {
                         dataCalled = false
                         if (data.data.length > 0) {
+                            // response.data.faq should contain your array
+
                             if (id !== data.data[0].contentID) {
                                 // console.log(data.data);
 
@@ -327,6 +330,13 @@ export default function Details() {
             }
         }
     }
+    const toggleAccordion = (id) => {
+        if (openIndex === id) {
+            setOpenIndex(null); // close if same clicked
+        } else {
+            setOpenIndex(id);
+        }
+    };
 
     return (
         <>
@@ -410,7 +420,7 @@ export default function Details() {
                                                     <>
                                                         <div className="DTopImg">
                                                             <div className="Details">
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" style={{width: "100%", height:"auto"}}/></picture>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" style={{ width: "100%", height: "auto" }} /></picture>
                                                             </div>
                                                             {/* <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" /> */}
                                                             <div className="DetailsTopCap">
@@ -463,17 +473,53 @@ export default function Details() {
                                                         </div>
                                                     </div> : " "
                                                 }
+                                                {news.faq.length > 0 ?
+                                                    <>
+                                                        <div className="faq-area-section">
+                                                            <div className="RelatedTags d-print-none">
+                                                                <div className="row">
+                                                                    <div className="col-sm-12">
+                                                                        <p className="Subject"> <FaTag /> FAQ : </p>
+                                                                        <div className="faq-area">
+                                                                            <div className="accordion" id="accordionExample">
+                                                                                {news.faq.map((item) => {
+                                                                                    return (
+
+                                                                                        <div className="accordion-item" key={item.id}>
+                                                                                            <h2 className="accordion-header">
+                                                                                                <button
+                                                                                                    className={`accordion-button ${openIndex === item.id ? "" : "collapsed"
+                                                                                                        }`}
+                                                                                                    type="button"
+                                                                                                    onClick={() => toggleAccordion(item.id)}
+                                                                                                >
+                                                                                                    {item.Question}
+                                                                                                </button>
+                                                                                            </h2>
+                                                                                            <div
+                                                                                                className={`accordion-collapse collapse ${openIndex === item.id ? "show" : ""
+                                                                                                    }`}
+                                                                                            >
+                                                                                                <div className="accordion-body">{item.Answer}</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    )
+                                                                                })}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </> : ""
+                                                }
                                                 <DfbComment contentID={news.ContentID} />
 
                                                 <div className="adsArea AdsHide mb-5">
                                                     {Ads ? <img src={Ads} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" /> :
                                                         <img src={DemoAds} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" />
                                                     }
-
                                                 </div>
-                                                {/* <div className='adsArea text-center'>
-                                                    <img src="/media/Advertisement/advertisement-320x100.png" alt="" title="" className="mbAds"></img>
-                                                </div> */}
                                             </div>
 
                                             <div className="col-lg-4 col-12 d-none d-lg-block detailsPage">

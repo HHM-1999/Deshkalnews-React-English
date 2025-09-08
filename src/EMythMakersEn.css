@@ -62,7 +62,7 @@ p {
 	line-height: 26px;
 	color: #333;
 	font-weight: 500;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .Brief p {
@@ -75,7 +75,7 @@ p {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 5px;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 /* header */
@@ -185,11 +185,13 @@ p {
 	color: #f0f0f0;
 	padding-right: 2px;
 }
-.menu-right-item.bn a{
+
+.menu-right-item.bn a {
 	color: #fff;
 	font-size: 15px;
 }
-.menu-right-item.bn a:hover{
+
+.menu-right-item.bn a:hover {
 	color: #ccc;
 }
 
@@ -238,7 +240,7 @@ p {
 	display: block;
 	font-weight: 700;
 	margin: 20px 0;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .DTitle:before {
@@ -328,6 +330,7 @@ p {
 	font-size: 24px;
 	font-weight: 600;
 }
+
 /* Video Css Area */
 .eng-site .video-area {
 	margin: 50px 0 0 0;
@@ -378,15 +381,16 @@ p {
 	line-height: 1.5;
 }
 
-.eng-site .video-area .section-heading h2{
+.eng-site .video-area .section-heading h2 {
 	color: #fff;
-  display: inline;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  position: relative;
-  font-family: "Noto Serif", Georgia, serif !important;
+	display: inline;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+	position: relative;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
+
 .video-area .section-heading i {
 	font-size: 17px;
 	padding-right: 10px;
@@ -561,6 +565,7 @@ p {
 	font-family: "Noto Serif", Georgia, serif !important;
 	padding-bottom: 10px;
 }
+
 .DVideoTopArea {
 	margin-top: 20px;
 }
@@ -753,6 +758,7 @@ img.Writer-img {
 	height: auto;
 	padding: 6px;
 }
+
 .eng-site .VideoPublishDate {
 	font-size: 16px;
 	line-height: 22px;
@@ -780,6 +786,7 @@ img.Writer-img {
 .NewsTitle {
 	position: relative;
 }
+
 .DVideoTopInner .Title {
 	font-size: 20px;
 	line-height: 40px;
@@ -832,6 +839,7 @@ img.Writer-img {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 .DVideoTop2Inner .col-lg-3.col-12:nth-child(4).border-right-inner {
 	border-right: 0;
 }
@@ -947,14 +955,14 @@ img.Writer-img {
 	color: #181819;
 	font-size: 22px;
 	font-weight: bold;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .contact-area .SectionTitle h1 {
 	color: #181819;
 	font-size: 22px;
 	font-weight: bold;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 /* archieve page */
@@ -1023,14 +1031,12 @@ img.Writer-img {
 .DTitleEng a {
 	color: #F00000;
 	font-family: "Noto Serif", Georgia, serif
-
 }
 
 .DTitleEng,
 .DTitleEng a:hover {
 	color: #555;
 	font-family: "Noto Serif", Georgia, serif
-
 }
 
 .DcatLeadTopUp {
@@ -1080,7 +1086,7 @@ img.Writer-img {
 
 .eng-site .DCatTop2 .Desc .Title {
 	font-size: 19px;
-	font-family:"Noto Serif", Georgia, serif
+	font-family: "Noto Serif", Georgia, serif
 }
 
 .DCatTop2:hover .Desc .Title {
@@ -1169,7 +1175,7 @@ img.Writer-img {
 	font-weight: 600;
 	line-height: 26px;
 	font-size: 22px;
-	font-family:"Noto Serif", Georgia, serif
+	font-family: "Noto Serif", Georgia, serif
 }
 
 
@@ -1254,7 +1260,7 @@ img.Writer-img {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 
 }
 
@@ -1306,7 +1312,7 @@ img.Writer-img {
 	font-weight: bold;
 	line-height: 34px;
 	position: relative;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .section-heading h2::before {
@@ -1343,7 +1349,7 @@ img.Writer-img {
 	font-weight: bold;
 	line-height: 40px;
 	margin-top: 8px;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site .DSecTitle h1 {
@@ -1351,7 +1357,7 @@ img.Writer-img {
 	font-weight: bold;
 	line-height: 40px;
 	margin-top: 8px;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .DetailsTop-Form .form-control:focus {
@@ -1706,7 +1712,7 @@ img.Writer-img {
 	line-height: 22px;
 	padding: 8px 5px 6px;
 	text-align: center;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .DLeftSideNews {
@@ -1739,7 +1745,7 @@ img.Writer-img {
 	line-height: 28px;
 	padding-bottom: 2px;
 	color: #ED1C24;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 	/*"Noto Serif Bengali"*/
 	;
 }
@@ -1759,7 +1765,7 @@ img.Writer-img {
 	line-height: 27px;
 	margin: 0px 0 15px;
 	color: #555;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 	;
 	font-style: italic;
 }
@@ -1812,7 +1818,7 @@ img.Writer-img {
 	padding-bottom: 15px;
 	word-wrap: break-word;
 	margin-top: 20px;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 
 
 }
@@ -1826,7 +1832,7 @@ img.Writer-img {
 .eng-site #contentDetails p a {
 	font-size: 18px !important;
 	line-height: 28px !important;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 	/* padding: 10px 0 !important; */
 	padding-bottom: 15px;
 	color: #001D9B;
@@ -1835,7 +1841,7 @@ img.Writer-img {
 
 .eng-site #contentDetails p {
 	text-align: justify !important;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 .eng-site #contentDetails p span {
@@ -1955,6 +1961,23 @@ img.Writer-img {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+/*  faq segment */
+.faq-area {
+	background: #fff;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25), 0 3px 10px 5px rgba(0, 0, 0, 0.05) !important;
+	margin-top: 15px;
+}
+.faq-area .accordion-item {
+	background-color: #fff;
+	border: none;
+}
+.faq-area  .accordion-item:first-of-type{
+	border: 1px solid #dedede;
+}
+.faq-area .accordion-button:not(.collapsed){
+	color: #eb030b;
+	box-shadow: none;
+}
 
 /* search page */
 .eng-site span.mvp-feat1-pop-head {
@@ -1969,7 +1992,7 @@ img.Writer-img {
 	position: relative;
 	transform: skewX(-15deg);
 	z-index: 1;
-	font-family: "Noto Serif", Georgia, serif!important;
+	font-family: "Noto Serif", Georgia, serif !important;
 }
 
 @media screen and (max-width:768px) {
@@ -1997,9 +2020,11 @@ img.Writer-img {
 	.eng-site .CommonLead3 img {
 		width: 100% !important;
 	}
+
 	.eng-site .slick-prev {
 		left: -10px !important;
 	}
+
 	.eng-site .slick-next {
 		right: 0 !important;
 	}
