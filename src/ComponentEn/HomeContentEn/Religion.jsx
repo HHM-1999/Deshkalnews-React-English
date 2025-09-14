@@ -40,7 +40,7 @@ export default function Religion() {
             </div>
             <div className="probash-sec">
                 <div className="CommonLead" key={List2.ContentID} >
-                    <Link to={"/details/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
+                    <Link to={"/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
                         <div className="row">
                             <div className="col-lg-12 col-5 Imgresize">
                                 <picture>
@@ -73,7 +73,7 @@ export default function Religion() {
                     return (
                         <>
                             <div className="CommonLeadList" key={i}>
-                                <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                     <div className="row">
                                         <div className="col-lg-6 col-7">
                                             <div className="Desc">

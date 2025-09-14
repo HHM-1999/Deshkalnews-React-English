@@ -32,12 +32,16 @@ export default function MainRouterLinkEn() {
             <Routes>
                 <Route path="/" element={<HomeEn />} />
                 <Route path="/archives" element={<ArchivesEn />} />
-                <Route path="/details/:catSlugEn/:id" element={<Details />} />
+                {/* <Route path="/details/:catSlugEn/:id" element={<Details />} /> */}
                 <Route path="/*" element={<ErrorPageEn />} />
                 <Route path="/search/:searchSlug" element={<SearchResult />} />
                 <Route path="/latest" element={<Latest />} />
-                <Route path="/:catSlugEn" element={<Category />} />
+                {/* <Route path="/:catSlugEn" element={<Category />} />
                 <Route path="/:catSlugEn/:subCatSlug" element={<SubCategory />} />
+                 */}
+                <Route path="/:catSlugEn/sub/:subCatSlug" element={<SubCategory />} />
+                <Route path="/:catSlugEn/:id" element={<Details />} />
+                <Route path="/:catSlugEn" element={<Category />} />
                 <Route path="/photo/" element={<PhotoGallery />} />
                 <Route path="/photo/:AlbumID" element={<DetailsPhotoFeature />} />
                 <Route path="/videos" element={<VideoGallery />} />

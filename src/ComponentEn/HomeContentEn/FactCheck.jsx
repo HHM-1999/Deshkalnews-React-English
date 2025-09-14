@@ -36,7 +36,7 @@ export default function FactCheck() {
                     </div>
                     <div className="Common-list">
                         <div className="Common-list-details">
-                            <Link to={"/english/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
+                            <Link to={"/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
                                 <div className="row">
                                     <div className="col-lg-12 col-12 Imgresize">
                                         <picture>{List1.ImageBgPath == null ?
@@ -65,7 +65,7 @@ export default function FactCheck() {
                     {List2.map((nc, i) => {
                         return (
                             <div className="CommonLeadList2" key={i}>
-                                <Link to={"/english/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                     <div className="row">
                                         <div className="col-lg-5 col-5">
                                             <div className="Imgresize">

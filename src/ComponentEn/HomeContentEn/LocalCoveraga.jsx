@@ -11,11 +11,11 @@ export default function LocalCoverage() {
     useEffect(() => {
 
         axios
-            .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateCategory37.json`)
+            .get(`${process.env.REACT_APP_EN_API_URL}home-json-en/generateSubCategory37.json`)
             .then(({ data }) => {
                 if (data.length > 0) {
-                    setList1(data[0] === false);
-                    setList2(data.slice(1, 6) ===false);
+                    setList1(data[0]);
+                    setList2(data.slice(1, 6) );
                 }
             });
 
@@ -30,14 +30,14 @@ export default function LocalCoverage() {
                 <div className="row">
                     <div className="col-12">
                         <div className="section-heading">
-                            <h2><i className="fa-solid fa-chevron-right"></i><Link to='/news/local-coverage' onClick={scrollTop}>Local Coverage</Link></h2>
+                            <h2><i className="fa-solid fa-chevron-right"></i><Link to='/news/sub/local-coverage' onClick={scrollTop}>Local Coverage</Link></h2>
                         </div>
                     </div>
                 </div>
-                {/* <div className=" row">
+                <div className=" row">
                     <div className="col-lg-8 border-right-inner">
                         <div className="CommonLead">
-                            <Link to={"/details/" + list1.Slug + "/" + list1.ContentID} onClick={scrollTop}>
+                            <Link to={ '/news/' + list1.ContentID} onClick={scrollTop}>
                                 <div className="Imgresize">
                                     <picture>
                                         {list1.ImageBgPath == null ?
@@ -63,7 +63,7 @@ export default function LocalCoverage() {
                         {list2.map((list, i) => {
                             return (
                                 <div className="CommonLeadList" key={i}>
-                                    <Link to={"/details/" + list.Slug + "/" + list.ContentID} onClick={scrollTop}>
+                                    <Link to={"/news/" + list.ContentID} onClick={scrollTop}>
                                         <div className="row">
                                             <div className="col-lg-6 col-5">
                                                 <div className="Imgresize">
@@ -90,11 +90,11 @@ export default function LocalCoverage() {
                         }
                         )}
                     </div>
-                </div> */}
+                </div>
             </div>
-            {/* <div className="seeMore">
-                <Link className="btn btnMore" to="/news/local-coverage" onClick={scrollTop}>More...</Link>
-            </div> */}
+            <div className="seeMore">
+                <Link className="btn btnMore" to="/news/sub/local-coverage" onClick={scrollTop}>More...</Link>
+            </div>
         </>
     )
 

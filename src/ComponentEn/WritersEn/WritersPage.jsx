@@ -171,7 +171,7 @@ export default function WritersPage() {
                                         {writersRelatedNews.map((nc) => {
                                             return (
                                                 <div className="writer archiveListNews" key={nc.WriterID}>
-                                                    <Link rel="preload" as="image" to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                                    <Link rel="preload" as="image" to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                                         <div className="row">
                                                             <div className="col-sm-3 col-5 card-video-part">
                                                                 <div className="DImgZoomBlock">

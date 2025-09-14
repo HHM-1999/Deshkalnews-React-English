@@ -55,10 +55,9 @@ export default function VideoHome() {
                     </div>
                     {videos ? 
                     <div className="row">
-                        {videos.WebTVHeadingEn ? 
+                   
                         <div className="col-lg-6 ">
                             <div className="video-big">
-
                                 <Link to={"/videos/" + videos.WebTVID} onClick={scrollTop}>
                                     <div className="video-img-wrap Imgresize">
                                         <picture>
@@ -86,14 +85,14 @@ export default function VideoHome() {
                                         <div className="video-icon"><i className="fas fa-play"></i></div>
                                     </div>
                                     <div className="Desc">
-                                        <h3 className="Title">{videos.WebTVHeadingEn}</h3>
+                                        <h3 className="Title">{videos.WebTVHeadingEn ? videos.WebTVHeadingEn : ""}</h3>
 
                                     </div>
 
                                 </Link>
                             </div>
                         </div>
-                        : ""}
+                  
                         <div className="col-lg-6">
                             <div className="video-middel">
                                 <div className="row">

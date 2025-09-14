@@ -12,7 +12,7 @@ export default function DCatLatest({ catLatest, catName }) {
                     {catLatest.map((nc) => {
                         return (
                             <div className="DTop3List" key={nc.ContentID}>
-                                <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                     <div className="row">
                                         <div className="col-lg-5  col-5">
                                             <div className="DImgZoomBlock">

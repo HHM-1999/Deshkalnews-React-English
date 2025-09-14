@@ -38,7 +38,7 @@ export default function IntlRelations() {
                 <div className="row">
                     <div className="col-12">
                         <div className="section-heading">
-                            <Link to='/world' onClick={scrollTop}>
+                            <Link to='/foreign-affairs' onClick={scrollTop}>
                                 <h2><i className="fa-solid fa-chevron-right"></i>Int’l Relations</h2>
                             </Link>
                         </div>
@@ -48,7 +48,7 @@ export default function IntlRelations() {
                     <div className="CommonSecNews3-wrapper">
                         {List1 ?
                             <div className="CommonLead3" key={List1.ContentID}>
-                                <Link to={"/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
+                                <Link to={"/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
                                     <div className="row">
                                         <div className="col-lg-4 Imgresize">
                                             <picture>
@@ -88,7 +88,7 @@ export default function IntlRelations() {
                             <div className="multiple-news-wrap">
                                 {List2 ?
                                     <div className="CommonLead" key={List2.ContentID}>
-                                        <Link to={"/details/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
+                                        <Link to={"/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
                                             <div className="row">
                                                 <div className="col-lg-12 col-5 Imgresize">
                                                     <picture>
@@ -125,7 +125,7 @@ export default function IntlRelations() {
                             <div className="multiple-news-wrap">
                                 {List3 ?
                                     <div className="CommonLead" key={List3.ContentID}>
-                                        <Link to={"/details/" + List3.Slug + "/" + List3.ContentID} onClick={scrollTop} >
+                                        <Link to={"/" + List3.Slug + "/" + List3.ContentID} onClick={scrollTop} >
                                             <div className="row">
                                                 <div className="col-lg-12 col-5 Imgresize">
                                                     <picture>
@@ -170,7 +170,7 @@ export default function IntlRelations() {
                                     <div className="col-lg-6" key={i}>
                                         <div className="Common-list">
                                             <div className="Common-listBox-item">
-                                                <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                                     <div className="Desc">
                                                         {nc.AltHomeTitle ?
                                                             <h3 className="Title">{nc.AltHomeTitle}</h3> :
@@ -192,7 +192,7 @@ export default function IntlRelations() {
                         })}
                     </div>
                     <div className="seeMore">
-                        <Link className="btn btnMore" to='/world' onClick={scrollTop}>More...</Link>
+                        <Link className="btn btnMore" to='/foreign-affairs' onClick={scrollTop}>More...</Link>
                     </div>
                 </div >
             </>

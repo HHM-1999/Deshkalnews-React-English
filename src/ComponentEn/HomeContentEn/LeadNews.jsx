@@ -49,7 +49,7 @@ export default function LeadNews() {
                         <div className="col-lg-6 col-12 border-right-inner">
                             {/* {LeadData.ShowLiveBlog === 2 && LeadData.LiveBlogStatus === 2 ? */}
                             <div className="DLeadNews">
-                                <Link rel="preload" as="image" to={"/details/" + LeadData.categorySlug + "/" + LeadData.ContentID} onClick={scrollTop} key={LeadData.ContentID}>
+                                <Link rel="preload" as="image" to={"/" + LeadData.categorySlug + "/" + LeadData.ContentID} onClick={scrollTop} key={LeadData.ContentID}>
                                     <div className="LeadImage Imgresize">
                                         {LeadData.ImageBgPath == null ?
                                             <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_LAZYL_IMG} alt={LeadData.DetailsHeading} title={LeadData.DetailsHeading} className="img-fluid img100" style={{width: "800px", height:"100%"}} /> :
@@ -90,7 +90,7 @@ export default function LeadNews() {
                                     {tagsRelatedNews?.map((nc, i) => {
                                         return (
                                             <div className="CommonLeadList2" key={i} >
-                                                <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}  >
+                                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}  >
                                                     <div className="row">
                                                         <div className="col-lg-5 col-5">
                                                             <div className="Imgresize">
@@ -131,8 +131,8 @@ export default function LeadNews() {
                                                 <>
                                                 {
                                                     nc.AltHomeTitle ?
-                                                    <li><Link to={"/details/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop} key={i}>{nc.AltHomeTitle}</Link></li> :
-                                                    <li><Link to={"/details/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop} key={i}>{nc.DetailsHeading}</Link></li>
+                                                    <li><Link to={"/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop} key={i}>{nc.AltHomeTitle}</Link></li> :
+                                                    <li><Link to={"/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop} key={i}>{nc.DetailsHeading}</Link></li>
                                                 }
                                                 </>
                                               

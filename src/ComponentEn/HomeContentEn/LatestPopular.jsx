@@ -68,7 +68,7 @@ export default function LatestPopular() {
                                         generateLatest && generateLatest.map((nc, i) => {
                                             return (
                                                 <li className="DLatestNewsList" key={i}>
-                                                    <Link to={"/details/" + nc.categorySlug + "/" + nc.ContentID}>
+                                                    <Link to={"/" + nc.categorySlug + "/" + nc.ContentID}>
                                                         <div className="d-flex flex-row">
                                                             <span className="Counter">{(i + 1)}</span>
                                                             <p>{nc.DetailsHeading}
@@ -94,7 +94,7 @@ export default function LatestPopular() {
                                             generatePopular && generatePopular.map((nc, i) => {
                                                 return (
                                                     <li className="DLatestNewsList" key={i}>
-                                                        <Link to={"/details/" + nc.categorySlug + "/" + nc.ContentID}>
+                                                        <Link to={"/" + nc.categorySlug + "/" + nc.ContentID}>
                                                             <div className="d-flex flex-row">
                                                                 <span className="Counter">{(i + 1)}</span>
                                                                 <p>{nc.DetailsHeading}

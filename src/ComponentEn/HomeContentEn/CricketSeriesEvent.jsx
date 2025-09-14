@@ -40,7 +40,7 @@ const CricketSeriesEvent = () => {
           {tagsRelatedNews?.map((nc, i) => {
             return (
               <div className="CommonLeadList2" key={i} >
-                <Link to={"/english/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}  >
+                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}  >
                   <div className="row">
                     <div className="col-lg-5 col-5">
                       <div className="Imgresize">

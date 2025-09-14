@@ -260,7 +260,7 @@ app.get('/english-news-sitemap.xml', async function (request, response) {
                     : result[i].fcreated_at;
 
                 xml += `<url>
-                    <loc>${FEndUrl}/english/details/${result[i].CategorySlug}/${result[i].ContentID}</loc>
+                    <loc>${FEndUrl}/details/${result[i].CategorySlug}/${result[i].ContentID}</loc>
                     <news:news>
                         <news:publication>
                             <news:name>DeshkalNews.com</news:name>
@@ -597,8 +597,8 @@ app.get('/rss/rss.xml', async function (request, response) {
                 xml += `<item>
             <title><![CDATA[ ${title} ]]></title>
             <description><![CDATA[ ${desc} ]]></description>
-            <link>${FEndUrl}/english/details/${row.CategorySlug}/${row.ContentID}</link>
-            <guid isPermaLink="true">${FEndUrl}/english/details/${row.CategorySlug}/${row.ContentID}</guid>
+            <link>${FEndUrl}/details/${row.CategorySlug}/${row.ContentID}</link>
+            <guid isPermaLink="true">${FEndUrl}/details/${row.CategorySlug}/${row.ContentID}</guid>
             <pubDate>${pubDate}</pubDate>
             <media:content medium="image" width="800" height="450" url="${CDNUrl}/media/${row.ImageBgPath}"/>
           </item>`;

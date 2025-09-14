@@ -26,7 +26,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                           "width": "800",
                           "height": "450"
                         },
-                        "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}",
+                        "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}",
                         "datePublished": "${convertToBSTISOString(news.created_at)}",
                         "dateModified": "${convertToBSTISOString(news.ModifiedDate)}",
                         "author": {
@@ -43,7 +43,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                         },
                         "mainEntityOfPage": {
                           "@type": "WebPage",
-                          "@id": "${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}"
+                          "@id": "${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}"
                         },
                         "keywords": "${KeyWord}",
                         "thumbnailUrl": "${process.env.REACT_APP_IMG_Path + news.ImageBgPath}",
@@ -52,7 +52,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                         "isAccessibleForFree": true,
                         "isPartOf": {
                           "@type": "WebPage",
-                          "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}",
+                          "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}",
                           "primaryImageOfPage": {
                             "@type": "ImageObject",
                             "url": "${process.env.REACT_APP_IMG_Path + news.ImageBgPath}",
@@ -95,7 +95,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                                 "position":3,
                                 "item":{
                                     "name":"${newHeader}",
-                                    "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}"
+                                    "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}"
                                 }
                             }
                         ]
@@ -112,11 +112,11 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                             "width":"800",
                             "height":"450"
                         },
-                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}",
+                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}",
                         "datePublished":"${convertToBSTISOString(news.created_at)}",
                         "mainEntityOfPage":{
                             "@type":"WebPage",
-                            "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}"
+                            "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}"
                         },
                         "publisher":{
                             "@type":"Organization",
@@ -152,7 +152,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                         "isAccessibleForFree":true,
                         "isPartOf":{
                             "@type":"WebPage",
-                            "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}details/${catSlugEn}/${news.ContentID}",
+                            "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}${catSlugEn}/${news.ContentID}",
                             "primaryImageOfPage":{
                                 "@type":"ImageObject",
                                 "url":"${process.env.REACT_APP_IMG_Path + news.ImageBgPath}",

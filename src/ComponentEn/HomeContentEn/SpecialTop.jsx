@@ -36,7 +36,7 @@ export default function SpecialTop() {
                 <div className="leadTop3">
                     <div className="Common-list">
                         <div className="Common-list-details">
-                            <Link to={"/details/" + LeadSpecial1.categorySlug + "/" + LeadSpecial1.ContentID} onClick={scrollTop}>
+                            <Link to={"/" + LeadSpecial1.categorySlug + "/" + LeadSpecial1.ContentID} onClick={scrollTop}>
                                 <div className="row">
                                     <div className="col-lg-12 col-12 Imgresize">
                                         {LeadSpecial1.ImageBgPath == null ?
@@ -68,7 +68,7 @@ export default function SpecialTop() {
                         LeadSpecial2.map((nc, i) => {
                             return (
                                 <div className="CommonLeadList2" key={i}>
-                                    <Link to={"/details/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop}>
+                                    <Link to={"/" + nc.categorySlug + "/" + nc.ContentID} onClick={scrollTop}>
                                         <div className="row">
                                             <div className="col-lg-5 col-5">
                                                 <div className="Imgresize">

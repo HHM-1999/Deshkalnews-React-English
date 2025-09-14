@@ -36,7 +36,7 @@ export default function Climate() {
                     </div>
 
                     <div className="CommonLead">
-                        <Link to={"/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
+                        <Link to={"/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
                             <div className="Imgresize">
                                 <picture>
                                     {List1.ImageBgPath == null ?
@@ -60,7 +60,7 @@ export default function Climate() {
                         List2.map((item, index) => {
                             return (
                                 <div className="CommonLeadList" key={index}>
-                                    <Link to={"/details/" + item.Slug + "/" + item.ContentID} onClick={scrollTop} >
+                                    <Link to={"/" + item.Slug + "/" + item.ContentID} onClick={scrollTop} >
                                         <div className="row">
                                             <div className="col-lg-6 col-5">
                                                 <div className="Imgresize">

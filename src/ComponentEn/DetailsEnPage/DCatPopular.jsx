@@ -13,7 +13,7 @@ export default function DCatPopular({ catPopular, catName }) {
                         return (
                             <div className="col-lg-6 col-12" key={nc.ContentID}>
                                 <div className="DTop3List">
-                                    <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                    <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                         <div className="row">
                                             <div className="col-lg-4 col-sm-4 col-5">
                                                 <div className="DImgZoomBlock">

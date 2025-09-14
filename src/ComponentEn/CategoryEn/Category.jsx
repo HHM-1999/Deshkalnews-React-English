@@ -121,7 +121,7 @@ export default function Category() {
                                     <div className="col-lg-8 col-12 d-flex ">
                                         <div className="DCatLeadTop">
                                             {catLeadNews1 && (
-                                                <Link rel="preload" as="image" to={`/details/${catLeadNews1.Slug}/${catLeadNews1.ContentID}`} onClick={scrollTop}>
+                                                <Link rel="preload" as="image" to={`/${catLeadNews1.Slug}/${catLeadNews1.ContentID}`} onClick={scrollTop}>
                                                     <div className="row">
                                                         <div className="col-lg-8 col-12">
                                                             <div className="DImgZoomBlock">
@@ -145,7 +145,7 @@ export default function Category() {
                                     <div className="col-lg-4 col-12 d-flex">
                                         <div className="DCatTop2 align-self-stretch">
                                             {catLeadNews2 && (
-                                                <Link rel="preload" as="image" to={`/details/${catLeadNews2.Slug}/${catLeadNews2.ContentID}`} onClick={scrollTop}>
+                                                <Link rel="preload" as="image" to={`/${catLeadNews2.Slug}/${catLeadNews2.ContentID}`} onClick={scrollTop}>
                                                     <div className="row">
                                                         <div className="col-lg-12 col-sm-4 col-5">
                                                             <div className="DImgZoomBlock">
@@ -171,7 +171,7 @@ export default function Category() {
                                     {catLeadNews3.map(nc => (
                                         <div className="col-lg-4 col-12 d-flex border-right-inner" key={nc.ContentID}>
                                             <div className="DCatTop3tList align-self-stretch">
-                                                <Link to={`/details/${nc.Slug}/${nc.ContentID}`} onClick={scrollTop}>
+                                                <Link to={`/${nc.Slug}/${nc.ContentID}`} onClick={scrollTop}>
                                                     <div className="row">
                                                         <div className="col-lg-12 col-sm-4 col-5">
                                                             <div className="DImgZoomBlock">
@@ -202,7 +202,7 @@ export default function Category() {
                                     {catNewsMore.map(nc => (
                                         <div className="col-lg-6 col-12 d-flex" key={nc.ContentID}>
                                             <div className="DCatNewsList align-self-stretch">
-                                                <Link to={`/details/${nc.Slug}/${nc.ContentID}`} onClick={scrollTop}>
+                                                <Link to={`/${nc.Slug}/${nc.ContentID}`} onClick={scrollTop}>
                                                     <div className="row">
                                                         <div className="col-lg-5 col-sm-4 col-5">
                                                             <div className="DImgZoomBlock">

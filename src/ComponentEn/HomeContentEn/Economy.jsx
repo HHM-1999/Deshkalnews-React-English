@@ -44,7 +44,7 @@ export default function Economy() {
                 <div className="multiple-news-wrap">
                     {List2 ?
                         <div className="CommonLead">
-                            <Link to={"/details/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
+                            <Link to={"/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
                                 <div className="row">
                                     <div className="col-lg-12 col-5 Imgresize">
                                         <picture>
@@ -84,7 +84,7 @@ export default function Economy() {
                         <>
                             <div className="Common-list" key={i}>
                                 <div className="Common-listBox-item">
-                                    <Link to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                    <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                         <div className="Desc">
                                             {nc.AltHomeTitle ?
                                                 <h3 className="Title">{nc.AltHomeTitle}</h3> :

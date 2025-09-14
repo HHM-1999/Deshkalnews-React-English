@@ -30,13 +30,13 @@ export default function Interview() {
                     <div className="row">
                         <div className="col-12">
                             <div className="section-heading">
-                                <h2><i className="fa-solid fa-chevron-right"></i><Link to='/opinion/interview' onClick={scrollTop}>Interview</Link></h2>
+                                <h2><i className="fa-solid fa-chevron-right"></i><Link to='/opinion/sub/interview' onClick={scrollTop}>Interview</Link></h2>
                             </div>
                         </div>
                     </div>
 
                     <div className="CommonLead">
-                        <Link to={"/details/" + List1.Slug + "/" + List1.ContentID} onClick={scrollTop}>
+                        <Link to={"/opinion/" + List1.ContentID} onClick={scrollTop}>
                             <div className="Imgresize">
                                 <picture>
                                     {List1.ImageBgPath == null ?
@@ -60,7 +60,7 @@ export default function Interview() {
                         List2.map((item, index) => {
                             return (
                                 <div className="CommonLeadList" key={index}>
-                                    <Link to={"/details/" + item.Slug + "/" + item.ContentID} onClick={scrollTop} >
+                                    <Link to={"/opinion/" + item.ContentID} onClick={scrollTop} >
                                         <div className="row">
                                             <div className="col-lg-6 col-5">
                                                 <div className="Imgresize">
@@ -90,7 +90,7 @@ export default function Interview() {
                         })
                     }
                     <div className="seeMore">
-                        <Link className="btn btnMore" to="/opinion/interview" onClick={scrollTop}>More...</Link>
+                        <Link className="btn btnMore" to="/opinion/sub/interview" onClick={scrollTop}>More...</Link>
                     </div>
                 </div>
             </>

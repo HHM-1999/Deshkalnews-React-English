@@ -98,7 +98,7 @@ export default function Latest() {
                         return (
                             <div className="col-lg-6 col-sm-12" key={nc.ContentID}>
                                 <div className="archiveListNews" >
-                                    <Link rel="preload" as="image" to={"/details/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                    <Link rel="preload" as="image" to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
                                         <div className="row">
                                             <div className="col-sm-4 col-5 card-video-part">
                                                 <div className="DImgZoomBlock">
