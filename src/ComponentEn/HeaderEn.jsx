@@ -134,16 +134,16 @@ export default function HeaderEn() {
                               {/* <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/bangladesh">Bangladesh
                               </a>
                               </li> */}
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/government">Government
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/sub/government">Government
                               </a>
                               </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/election">Election
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/sub/election">Election
                               </a>
                               </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/crime">
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/sub/crime">
                                 Crime</a>
                               </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/law-and-justice">Law and Justice</a>
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/news/sub/law-and-justice">Law and Justice</a>
                               </li>
                               {/* <li className="nav-item"><a className="nav-link" target="_self" aria-label=""
                                 href="/bangladesh/city">City</a>
@@ -158,28 +158,28 @@ export default function HeaderEn() {
                               </a> </li>
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/sports"> Sports
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/economy"> Economy
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/sub/economy"> Economy
                               </a> </li>
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business">Business
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/stock-market"> Stock Market
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/sub/stock-market"> Stock Market
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/banking">Banking
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/sub/banking">Banking
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/consumer-market">Consumer Market</a>
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/sub/consumer-market">Consumer Market</a>
                               </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/trade-and-investment">Trade & Investment</a>
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/sub/trade-and-investment">Trade & Investment</a>
                               </li>
                               {/* <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/business/export-and-import">Export and Import </a>
                               </li> */}
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/entertainment">
                                 Entertainment
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/entertainment/art-and-literature">Art & Literature
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/entertainment/sub/art-and-literature">Art & Literature
                               </a> </li>
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/opinion">Opinion
                               </a> </li>
-                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/opinion/interview">Interview
+                              <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/opinion/sub/interview">Interview
                               </a> </li>
                               <li className="nav-item"><a className="nav-link" target="_self" aria-label="" href="/climate">Climate
                               </a> </li>
@@ -230,13 +230,13 @@ export default function HeaderEn() {
                           <Link onClick={scrollTop} to="/news" className="nav-link dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">News</Link>
                           <ul className="dropdown-menu">
                             {/* <li><Link onClick={scrollTop} className="dropdown-item" to="/news/bangladesh">Bangladesh</Link></li> */}
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/government">Government</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/election">Election</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/capital-affairs ">Capital Affairs</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/local-coverage">Local Coverage</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/law-and-justice">Law and Justice</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/crime">Crime</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/education">Education</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/government">Government</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/election">Election</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/capital-affairs ">Capital Affairs</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/local-coverage">Local Coverage</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/law-and-justice">Law and Justice</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/crime">Crime</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/education">Education</Link></li>
                             {/* <li><Link onClick={scrollTop} className="dropdown-item" to="/news/spacial-report">Special Report</Link></li> */}
 
 
@@ -255,13 +255,13 @@ export default function HeaderEn() {
                         <li className="nav-item dropdown">
                           <Link onClick={scrollTop} to="/business" className="nav-link dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">Business</Link>
                           <ul className="dropdown-menu">
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/economy">Economy</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/budget">Budget </Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/stock-market">Stock Market</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/banking">Banking</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/consumer-market">Consumer Market</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/trade-and-investment">Trade & Investment</Link></li>
-                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/aviation-and-tourism ">Aviation & Tourism </Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/economy">Economy</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/budget">Budget </Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/stock-market">Stock Market</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/banking">Banking</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/consumer-market">Consumer Market</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/trade-and-investment">Trade & Investment</Link></li>
+                            <li><Link onClick={scrollTop} className="dropdown-item" to="/business/sub/aviation-and-tourism ">Aviation & Tourism </Link></li>
                           </ul>
                         </li>
                         <li className="nav-item"><Link className="nav-link" to="/sports" onClick={scrollTop}>Sports </Link></li>
@@ -297,7 +297,7 @@ export default function HeaderEn() {
                             <div className="row w-100 ">
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
-                                  <li><Link onClick={scrollTop} className="dropdown-item" to="/news/spacial-report">Special Report</Link></li>
+                                  <li><Link onClick={scrollTop} className="dropdown-item" to="/news/sub/spacial-report">Special Report</Link></li>
                                   <li><Link className="dropdown-item" to="/opinion " onClick={scrollTop}>Opinion</Link></li>
                                   <li><Link className="dropdown-item" to="/health" onClick={scrollTop}>Health</Link></li>
                                 </ul>
@@ -327,7 +327,7 @@ export default function HeaderEn() {
                               </div>
                               <div className="col-md-3" style={{ flex: '0 0 20%', maxWidth: "20%" }}>
                                 <ul className="nav flex-column">
-                                  <li><Link className="dropdown-item" to="/entertainment/art-and-literature" onClick={scrollTop}>Art & Literature</Link></li>
+                                  <li><Link className="dropdown-item" to="/entertainment/sub/art-and-literature" onClick={scrollTop}>Art & Literature</Link></li>
                                   <li ><Link className="dropdown-item" to="/media-affairs" onClick={scrollTop}>Media Affairs </Link></li>
                                   <li><Link className="dropdown-item" to="/opinion/interview" onClick={scrollTop}>Interview </Link></li>
 
