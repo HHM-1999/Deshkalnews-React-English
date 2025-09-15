@@ -1296,7 +1296,7 @@ a.close-search {
 	scrollbar-width: thin;
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 90vh;
 	padding-bottom: 150px;
 }
 
@@ -4021,17 +4021,18 @@ span.mvp-feat1-pop-head {
 
 .DDivisionNav .nav li {
 	float: left;
-	margin-bottom: 12px;
+	margin-bottom: 17px;
 }
 
 .DDivisionNav .nav li a {
-	padding: 8px 15px 6px;
-	margin-right: 1px;
+	padding: 8px;
+	margin-right: 3px;
 	background-color: transparent;
 	border-bottom: 1px solid #fff;
-	font-size: 1.1em;
+	font-size: 16px;
 	color: #333;
 	background-color: #ddd;
+	border: 1px solid #2222;
 }
 
 

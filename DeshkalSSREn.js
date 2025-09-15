@@ -80,8 +80,7 @@ app.get('/', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
 
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, ' Deshkal News | Unbiased & Timely News from Bangladesh');
@@ -144,13 +143,13 @@ app.get('/robots.txt', function (request, response) {
     response.setHeader('Content-Type', 'text/plain');
     console.log('robots.txt visited!');
 
-    let xml = `User-agent: *\nAllow: /\n\nSitemap: ${FEndUrl}/sitemap.xml\nSitemap: ${FEndUrl}/bangla-sitemap.xml\nSitemap: ${FEndUrl}/english-sitemap.xml\n`
+    let xml = `User-agent: *\nAllow: /\n\nSitemap: ${FEndUrl}/sitemap.xml\nSitemap: ${FEndUrl}/english-sitemap/.xml\nSitemap: ${FEndUrl}/english-sitemap.xml\n`
     var todate = new Date()
-    xml += `Sitemap: ${FEndUrl}/bangla-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\nSitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\n`
+    xml += `Sitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\nSitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\n`
     todate.setHours(23, 59, 59, 999)
     for (let i = 0; i < 30; i++) {
         todate.setDate(todate.getDate() - 1)
-        xml += `Sitemap: ${FEndUrl}/bangla-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\nSitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\n`
+        xml += `Sitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\nSitemap: ${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml\n`
     }
     // for (let i = 0; i < 70; i++) {
     //     xml += `Sitemap: ${FEndUrl}/sitemap-bn/sitemap-bn-${i + 1}.xml\n`
@@ -158,7 +157,7 @@ app.get('/robots.txt', function (request, response) {
     // for (let i = 0; i < 16; i++) {
     //     xml += `Sitemap: ${FEndUrl}/sitemap-en/sitemap-en-${i + 1}.xml\n`
     // }
-    xml += `Sitemap: ${FEndUrl}/bangla-news-sitemap.xml\nSitemap: ${FEndUrl}/english-news-sitemap.xml\n`
+    xml += `Sitemap: ${FEndUrl}/english-news-sitemap.xml\n`
     response.send(xml);
 });
 
@@ -168,16 +167,10 @@ app.get('/sitemap.xml', function (request, response) {
 
     let xml = `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <sitemap>
-            <loc>${FEndUrl}/bangla-sitemap.xml</loc>
-        </sitemap>
-        <sitemap>
             <loc>${FEndUrl}/english-sitemap.xml</loc>
         </sitemap>`
     var todate = new Date()
-    xml += `<sitemap>
-        <loc>${FEndUrl}/bangla-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml</loc>
-        <lastmod>${todate.toISOString()}</lastmod>
-    </sitemap>
+    xml += `
     <sitemap>
         <loc>${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml</loc>
         <lastmod>${todate.toISOString()}</lastmod>
@@ -185,21 +178,18 @@ app.get('/sitemap.xml', function (request, response) {
     todate.setHours(23, 59, 59, 999)
     for (let i = 0; i < 30; i++) {
         todate.setDate(todate.getDate() - 1)
-        xml += `<sitemap>
-            <loc>${FEndUrl}/bangla-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml</loc>
-            <lastmod>${todate.toISOString()}</lastmod>
-        </sitemap>
+        xml += `
         <sitemap>
             <loc>${FEndUrl}/english-sitemap/sitemap-daily-${todate.getFullYear()}-${todate.getMonth() < 9 ? '0' + (todate.getMonth() + 1) : todate.getMonth() + 1}-${todate.getDate() < 10 ? '0' + todate.getDate() : todate.getDate()}.xml</loc>
             <lastmod>${todate.toISOString()}</lastmod>
         </sitemap>`
     }
-    for (let i = 0; i < 70; i++) {
-        xml += `<sitemap>
-            <loc>${FEndUrl}/sitemap-bn/sitemap-bn-${i + 1}.xml</loc>
-            <lastmod>${todate.toISOString()}</lastmod>
-        </sitemap>`
-    }
+    // for (let i = 0; i < 70; i++) {
+    //     xml += `<sitemap>
+    //         <loc>${FEndUrl}/sitemap-bn/sitemap-bn-${i + 1}.xml</loc>
+    //         <lastmod>${todate.toISOString()}</lastmod>
+    //     </sitemap>`
+    // }
     for (let i = 0; i < 16; i++) {
         xml += `<sitemap>
             <loc>${FEndUrl}/sitemap-en/sitemap-en-${i + 1}.xml</loc>
@@ -294,8 +284,7 @@ app.get('/archives', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'Archive | All important old news and records');
         data = data.replace(/\$OG_DESCRIPTION/g, "All the archived old reports of Deshkal News in one place");
@@ -317,8 +306,7 @@ app.get('/latest', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'Latest news, Breaking news | DeshkalNews.com');
         data = data.replace(/\$OG_DESCRIPTION/g, "Read today's breaking news of Bangladesh on politics, sports, business, entertainment, weather, lifestyle, education, tourism, and latest bd news leading Bangla News portal Deshkal News");
@@ -340,8 +328,7 @@ app.get('/photo', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'News in Pictures | Photojournalism and Photo Reporting');
         data = data.replace(/\$OG_DESCRIPTION/g, "Our photos brought the news to life");
@@ -363,8 +350,7 @@ app.get('/tags', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews.com :: Tags');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews.com :: Tags");
@@ -386,8 +372,7 @@ app.get('/writers', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews.com:: Writers');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews.com:: Writers");
@@ -410,8 +395,7 @@ app.get('/privacy-policy', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews.com :: Privacy Policy');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews.com :: Privacy Policy");
@@ -433,8 +417,7 @@ app.get('/terms-service', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews.com :: Terms & Conditions');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews.com :: Terms & Conditions");
@@ -457,8 +440,7 @@ app.get('/contact-us', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews :: Contact');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews :: Contact");
@@ -481,8 +463,7 @@ app.get('/advertise', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews :: Advertisement');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews :: Advertisement");
@@ -505,8 +486,7 @@ app.get('/about', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'DeshKalNews :: about');
         data = data.replace(/\$OG_DESCRIPTION/g, "DeshKalNews :: about");
@@ -573,18 +553,18 @@ app.get('/rss/rss.xml', async function (request, response) {
           <channel>
             <title><![CDATA[ Deshkalnews.com ]]></title>
             <description><![CDATA[ DeshKalNews.com :: Deshkalnews.com ]]></description>
-            <link>${FEndUrl}/english</link>
+            <link>${FEndUrl}</link>
             <image>
               <url>${BEndUrl}/media/common/thumb.jpg</url>
               <title>DeshKalNews.com - RSS</title>
-              <link>${FEndUrl}/english</link>
+              <link>${FEndUrl}</link>
             </image>
             <generator>RSS by DeshkalNews.com</generator>
             <lastBuildDate>${curdate}</lastBuildDate>
             <copyright><![CDATA[ Copyright: (C) Deshkalnews.com ]]></copyright>
             <language><![CDATA[ en ]]></language>
             <ttl>15</ttl>
-            <atom:link href="${FEndUrl}/english/rss/rss.xml" rel="self" type="application/rss+xml"/>`;
+            <atom:link href="${FEndUrl}/rss/rss.xml" rel="self" type="application/rss+xml"/>`;
 
             for (let i = 0; i < result.length; i++) {
                 const row = result[i];
@@ -597,8 +577,8 @@ app.get('/rss/rss.xml', async function (request, response) {
                 xml += `<item>
             <title><![CDATA[ ${title} ]]></title>
             <description><![CDATA[ ${desc} ]]></description>
-            <link>${FEndUrl}/details/${row.CategorySlug}/${row.ContentID}</link>
-            <guid isPermaLink="true">${FEndUrl}/details/${row.CategorySlug}/${row.ContentID}</guid>
+            <link>${FEndUrl}/${row.CategorySlug}/${row.ContentID}</link>
+            <guid isPermaLink="true">${FEndUrl}/${row.CategorySlug}/${row.ContentID}</guid>
             <pubDate>${pubDate}</pubDate>
             <media:content medium="image" width="800" height="450" url="${CDNUrl}/media/${row.ImageBgPath}"/>
           </item>`;
@@ -663,7 +643,7 @@ app.get('/english-sitemap/:dailysitemap', async function (request, response) {
                     let moddate = new Date(lastmoddate);
 
                     xml += `<url>
-    <loc>${FEndUrl}/english/details/${result[i].CategorySlug}/${result[i].ContentID}</loc>
+    <loc>${FEndUrl}/${result[i].CategorySlug}/${result[i].ContentID}</loc>
     <image:image>
         <image:loc>${CDNUrl}/${result[i].ImageBgPath}</image:loc>
         <image:caption>
@@ -716,8 +696,6 @@ app.get('/:catSlugEn', async function (request, response) {
                 if (err) {
                     return console.log(err);
                 }
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${displayTitle}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${description}`);
@@ -735,8 +713,6 @@ app.get('/:catSlugEn', async function (request, response) {
                 if (err) {
                     return console.log(err);
                 }
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -758,8 +734,7 @@ app.get('/:catSlugEn', async function (request, response) {
             if (err) {
                 return console.log(err);
             }
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
+
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -808,8 +783,7 @@ app.get('/photo/:photoID', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${title}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${description}`);
@@ -829,8 +803,7 @@ app.get('/photo/:photoID', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -853,8 +826,7 @@ app.get('/photo/:photoID', async function (request, response) {
                 return console.log(err);
             }
 
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
+
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -888,8 +860,6 @@ app.get('/tags/:TagTitle', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${title}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${title}`);
@@ -908,8 +878,6 @@ app.get('/tags/:TagTitle', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -931,8 +899,6 @@ app.get('/tags/:TagTitle', async function (request, response) {
                 return console.log(err);
             }
 
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -965,8 +931,6 @@ app.get('/writers/:WriterSlug', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${title}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${title}`);
@@ -985,8 +949,6 @@ app.get('/writers/:WriterSlug', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -1009,8 +971,6 @@ app.get('/writers/:WriterSlug', async function (request, response) {
                 return console.log(err);
             }
 
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -1033,8 +993,7 @@ app.get('/search/:searchSlug', function (request, response) {
             return console.log(err);
         }
 
-        // ✅ Set language for English site
-        data = data.replace(/\$HTML_LANG/g, "en");
+
         data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
         data = data.replace(/\$OG_TITLE/g, 'Search | Search Latest News ::DeshKalNews.com');
         data = data.replace(/\$OG_DESCRIPTION/g, "Search | Search Latest News ::DeshKalNews.com");
@@ -1048,7 +1007,7 @@ app.get('/search/:searchSlug', function (request, response) {
         response.send(data);
     });
 });
-app.get('/:catSlugEn/:subCatSlug', async function (request, response) {
+app.get('/:catSlugEn/sub/:subCatSlug', async function (request, response) {
     let catSlug = request.params.catSlugEn;
     let subCatSlug = request.params.subCatSlug;
     console.log('English sub Category page visited! ' + catSlug + '/' + subCatSlug);
@@ -1067,8 +1026,7 @@ app.get('/:catSlugEn/:subCatSlug', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${title}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${title}`);
@@ -1087,8 +1045,7 @@ app.get('/:catSlugEn/:subCatSlug', async function (request, response) {
                     return console.log(err);
                 }
 
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -1110,8 +1067,7 @@ app.get('/:catSlugEn/:subCatSlug', async function (request, response) {
                 return console.log(err);
             }
 
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
+
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -1126,7 +1082,7 @@ app.get('/:catSlugEn/:subCatSlug', async function (request, response) {
         });
     }
 });
-app.get('/details/:catSlugEn/:id', async function (request, response) {
+app.get('/:catSlugEn/:id', async function (request, response) {
     let catSlug = request.params.catSlugEn;
     let id = request.params.id;
     console.log('English Detail page visited!' + catSlug + ' ' + id);
@@ -1162,8 +1118,7 @@ app.get('/details/:catSlugEn/:id', async function (request, response) {
                 if (err) {
                     return console.log(err);
                 }
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
                 data = data.replace(/\$OG_TITLE/g, `${title}`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `${description}`);
@@ -1181,8 +1136,7 @@ app.get('/details/:catSlugEn/:id', async function (request, response) {
                 if (err) {
                     return console.log(err);
                 }
-                // ✅ Set language for English site
-                data = data.replace(/\$HTML_LANG/g, "en");
+
                 data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
                 data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
                 data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
@@ -1204,8 +1158,7 @@ app.get('/details/:catSlugEn/:id', async function (request, response) {
             if (err) {
                 return console.log(err);
             }
-            // ✅ Set language for English site
-            data = data.replace(/\$HTML_LANG/g, "en");
+
             data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
             data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
             data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
@@ -1233,8 +1186,6 @@ app.get('*', function (request, response) {
         if (err) {
             return console.log(err);
         }
-        // ✅ Set language for Bangla site
-        data = data.replace(/\$HTML_LANG/g, "bn");
 
         data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
         data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);

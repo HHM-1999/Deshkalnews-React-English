@@ -178,13 +178,6 @@ p {
 	border-radius: 5px;
 	border: 1px solid #121212;
 }
-
-
-.header-meta-link .bn i {
-	color: #f0f0f0;
-	padding-right: 2px;
-}
-
 .menu-right-item.bn a {
 	color: #fff;
 	font-size: 15px;
@@ -193,6 +186,13 @@ p {
 .menu-right-item.bn a:hover {
 	color: #ccc;
 }
+
+.header-meta-link .bn i {
+	color: #f0f0f0;
+	padding-right: 2px;
+}
+
+
 
 .eng-site .header-meta-link ul li {
 	display: inline-block;

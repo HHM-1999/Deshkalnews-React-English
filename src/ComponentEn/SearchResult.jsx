@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import DocumentTitle from 'react-document-title'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-import { scrollTop, ForLazyLoaderImg } from './AllFunctions'
+import { scrollTop, ForLazyLoaderImg, formatTimestamp } from './AllFunctions'
 import axios from 'axios';
 var lazyloaded = false
 var showMore = true
@@ -153,7 +153,7 @@ export default function SearchResult() {
                                                                                     <p>{nc.ContentBrief}</p>
                                                                                 </div>
                                                                             </div>
-                                                                            <p className="pDate">{(nc.created_at)}</p>
+                                                                            <p className="pDate">{formatTimestamp(nc.created_at)}</p>
                                                                         </div>
                                                                     </div>
                                                                 </Link>

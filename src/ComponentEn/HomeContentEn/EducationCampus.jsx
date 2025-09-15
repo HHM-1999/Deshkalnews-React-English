@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { ForLazyLoaderImg, scrollTop } from "../AllFunctions";
 
@@ -9,7 +7,7 @@ import { FaPlay } from "react-icons/fa";
 
 var lazyloaded = false
 export default function EducationCampus() {
-    // const [SubcatName, setSubcatName] = useState([])
+
     const [List2, setList2] = useState([])
     const [List3, setList3] = useState([])
 
@@ -26,19 +24,6 @@ export default function EducationCampus() {
                 }, 1000);
                 }
             });
-        // axios
-        //     .get(`${process.env.REACT_APP_API_URL}category/education`)
-        //     .then(({ data }) => {
-        //         if (data.category) {
-        //             // setcatName(data.category)
-        //             setSubcatName(data.category.subCategories)
-
-        //             setTimeout(function () {
-        //                 lazyloaded = false
-        //                 ForLazyLoaderImg(lazyloaded)
-        //             }, 1000);
-        //         }
-        //     });
     }, [])
 
 
@@ -48,14 +33,14 @@ export default function EducationCampus() {
             <div className="row">
                 <div className="col-12">
                 <div className="section-heading d-flex align-items-end">
-                        <h2><a href="/news/education"><i className="fa-solid fa-chevron-right"></i>Education</a> </h2>
+                        <h2><a href="/news/sub/education"><i className="fa-solid fa-chevron-right"></i>Education</a> </h2>
                     </div>
                 </div>
             </div>
             <div className="multiple-news-wrap">
                 {List2 ?
                     <div className="CommonLead">
-                        <Link to={"/" + List2.Slug + "/" + List2.ContentID} onClick={scrollTop} >
+                        <Link to={"/news/" + List2.ContentID} onClick={scrollTop} >
                             <div className="row">
                                 <div className="col-lg-12 col-5 Imgresize">
                                     <picture>
@@ -65,7 +50,6 @@ export default function EducationCampus() {
                                             :
                                             <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + List2.ImageSmPath} alt={List2.DetailsHeading} title={List2.DetailsHeading} className="img-fluid img100" 
                                             style={{width: "300px", height:"100%"}} />
-
                                         }
                                         {List2.ShowVideo === 1 && <div className="card-video-icon big transition"><FaPlay /></div>}
                                     </picture>
@@ -96,7 +80,7 @@ export default function EducationCampus() {
 
                         <div className="Common-list" key={i}>
                             <div className="Common-listBox-item">
-                                <Link to={"/" + nc.Slug + "/" + nc.ContentID} onClick={scrollTop}>
+                                <Link to={"/news/" + nc.ContentID} onClick={scrollTop}>
                                     <div className="Desc">
                                         {nc.AltHomeTitle ?
                                             <h3 className="Title">{nc.AltHomeTitle}</h3> :
@@ -117,7 +101,7 @@ export default function EducationCampus() {
                 )
             })}
             <div className="seeMore">
-                <Link className="btn btnMore" to="/news/education" onClick={scrollTop}>More...</Link>
+                <Link className="btn btnMore" to="/news/sub/education" onClick={scrollTop}>More...</Link>
             </div>
 
         </>

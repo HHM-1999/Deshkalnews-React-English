@@ -7,6 +7,7 @@ import { ForLazyLoaderImg, scrollTop } from '../AllFunctions';
 import { FaPlay } from 'react-icons/fa';
 import ErrorPageEn from '../ErrorPageEn';
 import CatLdJson from './CatLdJson';
+import SubcatNames from './SubcatNames';
 
 export default function Category() {
     const { catSlugEn } = useParams();
@@ -109,13 +110,12 @@ export default function Category() {
                             <span>{catName.CategoryName}</span>
                         </h1>
                     </div>
-                    {/* </Link> */}
-                    {/* <DocumentTitle title={`${catName.CategoryName} | ${catName.CategoryName} Latest News ::  DeshKalNews.com`} /> */}
                     <DocumentTitle title={`${catName?.DisplayCatName ? catName.DisplayCatName : catName?.CategoryName +" Latest News ::  DeshKalNews.com"}`} />
                     <CatLdJson CatNames={catName.CategoryName} CatNameSlug={catName.Slug} />
                 </div>
+                <SubcatNames />
                     <div className="row">
-                        <div className="col-lg-9 col-sm-12  mt-5 DBorderRight">
+                        <div className="col-lg-9 col-sm-12 mt-4 DBorderRight">
                             <div className="DcatTopArea">
                                 <div className="row">
                                     <div className="col-lg-8 col-12 d-flex ">

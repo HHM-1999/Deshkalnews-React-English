@@ -200,11 +200,6 @@ export default function HeaderEn() {
                               </a>
                               </li>
                             </ul>
-                            <form className="d-flex">
-                              <input className="form-control me-2" type="search" placeholder="Search"
-                                aria-label="Search" />
-                              <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form>
                           </div>
                         </div>
                       </div>
@@ -329,7 +324,7 @@ export default function HeaderEn() {
                                 <ul className="nav flex-column">
                                   <li><Link className="dropdown-item" to="/entertainment/sub/art-and-literature" onClick={scrollTop}>Art & Literature</Link></li>
                                   <li ><Link className="dropdown-item" to="/media-affairs" onClick={scrollTop}>Media Affairs </Link></li>
-                                  <li><Link className="dropdown-item" to="/opinion/interview" onClick={scrollTop}>Interview </Link></li>
+                                  <li><Link className="dropdown-item" to="/opinion/sub/interview" onClick={scrollTop}>Interview </Link></li>
 
                                 </ul>
                               </div>
@@ -353,8 +348,8 @@ export default function HeaderEn() {
                     <li className="menu-right-item"><Link to="/videos" onClick={scrollTop}><i className="fa-regular fa-circle-play"></i>Videos</Link></li>
                       <li className="menu-right-item"><Link to="/photo" onClick={scrollTop}><i className="fa-solid fa-camera"></i>
                         Photo</Link></li>
-                      <li className="menu-right-item bn"><Link to="/bangla" onClick={scrollTop}><i className="fa-solid fa-globe"></i>
-                        বাংলা</Link></li>
+                      <li className="menu-right-item bn"><a href="https://bangla.deshkalnews.com/" onClick={scrollTop}><i className="fa-solid fa-globe"></i>
+                        বাংলা</a></li>
                       <li className="menu-right-item menu-search">
                         <span className="nav-link nav-link-search" onClick={setToggle}>
                           <i className="fa-solid fa-magnifying-glass"></i>
