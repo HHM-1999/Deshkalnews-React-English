@@ -106,7 +106,7 @@ export default function VideoDetails() {
 
                                                 <div className="col-lg-3 col-12 d-flex" key={nc.WebTVID} >
                                                     <div className="DCatTop3tList" >
-                                                        <Link rel="preload" as="image" to={"/videos/" + nc.WebTVID}>
+                                                        <Link rel="preload" as="image" to={"/videos/" + nc.WebTVID} onClick={scrollTop}>
                                                             <div className="row">
                                                                 <div className="col-lg-12 col-sm-4 col-5">
                                                                     <div className="LiveVideoImg">

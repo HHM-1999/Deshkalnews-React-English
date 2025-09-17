@@ -220,13 +220,13 @@ export default function ArchivesEn() {
                         </form>
                     </div>
                 </div>
-                {/* <div className="row">
+                <div className="row">
                     <div className="col-md-12">
                         <div className="DAdd1 mb-4 d-flex  justify-content-center">
-                            <Link to="/"><img src={"/media/Advertisement/Advertisement(970X90).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
+                            <Link to="#"><img src={"/media/Advertisement/Advertisement(970X90).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="row archiveSection">
                     {Array.isArray(news) && news.length > 0 ? (
                         news.map((nc) => (
@@ -271,9 +271,6 @@ export default function ArchivesEn() {
                         <button onClick={toggleButtonState} id="ajax-more-btn" className="btn btn-lg btn-block ButtonBG">More News...</button>
                     </div>}
             </div>
-
-
-
         </main>
     )
 }

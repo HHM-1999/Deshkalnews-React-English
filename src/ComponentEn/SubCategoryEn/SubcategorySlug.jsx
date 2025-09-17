@@ -128,7 +128,7 @@ export default function SubCategory() {
                                                 <div className="row">
                                                     <div className="col-lg-8 col-12">
                                                         <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.DetailsHeading} title={catLeadNews1.DetailsHeading} style={{width: "100%", height:"auto"}}/></picture>
+                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews1.ImageBgPath} alt={catLeadNews1.DetailsHeading} title={catLeadNews1.DetailsHeading} style={{ width: "100%", height: "auto" }} /></picture>
                                                             {catLeadNews1.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                         </div>
                                                     </div>
@@ -152,7 +152,7 @@ export default function SubCategory() {
                                                 <div className="row">
                                                     <div className="col-lg-12 col-sm-4 col-5">
                                                         <div className="DImgZoomBlock">
-                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews2.ImageSmPath} alt={catLeadNews2.DetailsHeading} title={catLeadNews2.DetailsHeading} style={{width: "100%", height:"auto"}}/></picture>
+                                                            <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + catLeadNews2.ImageSmPath} alt={catLeadNews2.DetailsHeading} title={catLeadNews2.DetailsHeading} style={{ width: "100%", height: "auto" }} /></picture>
                                                             {catLeadNews2.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                         </div>
                                                     </div>
@@ -176,7 +176,7 @@ export default function SubCategory() {
                                                     <div className="row">
                                                         <div className="col-lg-12 col-sm-4 col-5">
                                                             <div className="DImgZoomBlock">
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.DetailsHeading} title={nc.DetailsHeading} style={{width: "100%", height:"auto"}} /></picture>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + nc.ImageSmPath} alt={nc.DetailsHeading} title={nc.DetailsHeading} style={{ width: "100%", height: "auto" }} /></picture>
                                                                 {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                             </div>
                                                         </div>
@@ -195,7 +195,11 @@ export default function SubCategory() {
                         </div>
                     </div>
                 </section>
-
+                <div className="DBannerAdd text-center mt-2 mb-2">
+                    <Link to="#">
+                        <img src="/media/Advertisement/Advertisement(970X90).png" alt="Advertisement" title="Advertisement" fetchpriority="high" className="img-fluid" />
+                    </Link>
+                </div>
                 <section>
                     <div className="row">
                         <div className="col-lg-9 col-sm-12 mt-5 BorderRight">
@@ -209,7 +213,7 @@ export default function SubCategory() {
                                                     <div className="row">
                                                         <div className="col-lg-5 col-sm-4 col-5">
                                                             <div className="DImgZoomBlock">
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={nc.ImageSmPath ? process.env.REACT_APP_IMG_Path + nc.ImageSmPath : process.env.REACT_APP_LAZYL_IMG} alt={nc.DetailsHeading} title={nc.DetailsHeading} style={{width: "100%", height:"auto"}}/></picture>
+                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={nc.ImageSmPath ? process.env.REACT_APP_IMG_Path + nc.ImageSmPath : process.env.REACT_APP_LAZYL_IMG} alt={nc.DetailsHeading} title={nc.DetailsHeading} style={{ width: "100%", height: "auto" }} /></picture>
                                                                 {nc.ShowVideo === 1 && <div className="card-video-icon"><i className="fa-solid fa-play"></i></div>}
                                                             </div>
                                                         </div>

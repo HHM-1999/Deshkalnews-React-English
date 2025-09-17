@@ -1907,9 +1907,16 @@ span.mvp-feat1-pop-head {
 	font-family: 'SolaimanLipi' !important;
 }
 
-.contact-details {
+.contact-details .others-area{
 	padding-bottom: 20px;
 }
+.contact-details h3 {
+	font-size: 20px;
+	color: #212121;
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif !important
+}
+
 
 .contact-details h2 {
 	font-size: 20px;
@@ -1929,7 +1936,7 @@ span.mvp-feat1-pop-head {
 }
 
 .contact-details p span {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 600;
 }
 
@@ -4106,14 +4113,27 @@ span.mvp-feat1-pop-head {
 	background: #fff;
 }
 
-.sticky-ads {
-	position: sticky;
+/* .sticky-ads {
+	position: fixed;
 	top: 80px;
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
 }
-
+.ad-sec{
+	position: relative;
+} */
+.aAds-sticky-area {
+	position: relative;   /* makes sure sticky works inside */
+	/* overflow: visible; */
+	height: 100%;
+  }
+  
+  .aAds-sticky-wrap {
+	position: sticky;
+	top: 80px; 
+	display: block;  
+  }
 .Ads-area2 {
 	display: none;
 }

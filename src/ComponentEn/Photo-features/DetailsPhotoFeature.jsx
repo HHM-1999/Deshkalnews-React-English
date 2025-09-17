@@ -124,7 +124,7 @@ export default function DetailsPhotoFeature() {
                       return (
                         <div className="col-lg-3 col-12 d-flex" key={nc.AlbumID} >
                           <div className="DCatTop3tList" >
-                            <Link to={"/photo/" + nc.AlbumID}>
+                            <Link to={"/photo/" + nc.AlbumID} onClick={scrollTop}>
                               <div className="row">
                                 <div className="col-lg-12 col-sm-4 col-5">
                                   <div className="">

@@ -13,6 +13,7 @@ import DSocialShare from './DSocialShare'
 import DocumentTitle from 'react-document-title'
 import { FaPrint, FaTag } from 'react-icons/fa'
 import Ads from '../../assets/media/Advertisement/Advertisement(728X90).png'
+import Adss from '../../assets/media/Advertisement/300 x250 - Details.jpg';
 import DemoAds from '../../assets/media/Advertisement/demo(728x90).png'
 import favicon from '../../assets/media/common/favicon.png'
 import ErrorPageEn from '../ErrorPageEn'
@@ -115,7 +116,7 @@ export default function Details() {
                             if (id !== data.data[0].contentID) {
                                 // console.log(data.data);
 
-                                setState(data.data);
+                                setState(data.data[0]);
                                 document.title = data.data[0].ContentHeading;
                                 setCatName(data.data[0].CategoryName);
                                 setTimeout(function () {
@@ -362,205 +363,171 @@ export default function Details() {
                         </section>
 
                         <section id="newsSection">
-                            {state.map((news, i) => {
-                                return (
-                                    <div className="newsDetail" id={news.ContentID} data-title={news.DetailsHeading} key={i}>
+                            <div className="newsDetail" id={state.ContentID} data-title={state.DetailsHeading} key={state.ContentID}>
 
-                                        {i === 0 ? <Ldjson news={news} catName={catName} catSlugEn={catSlugEn} DisplayCatName={DisplayCatName} /> : ""}
-                                        <div className="row mt-2">
-                                            <div className="col-lg-8 col-12">
-                                                <div className="ContentDetails">
-                                                    {news.ContentSubHeading && <h3 className='DHeadingSubHeading'>{news.ContentSubHeading}</h3>}
-                                                    <h1>{news.DetailsHeading}</h1>
-                                                    {news.ContentShoulder && <h4 className='DHeadingContentShoulder'>{news.ContentShoulder}</h4>}
+                                {state.ContentID === 0 ? <Ldjson news={state} catName={catName} catSlugEn={catSlugEn} DisplayCatName={DisplayCatName} /> : ""}
+                                <div className="row mt-2">
+                                    <div className="col-lg-8 col-12">
+                                        <div className="ContentDetails">
+                                            {state.ContentSubHeading && <h3 className='DHeadingSubHeading'>{state.ContentSubHeading}</h3>}
+                                            <h1>{state.DetailsHeading}</h1>
+                                            {state.ContentShoulder && <h4 className='DHeadingContentShoulder'>{state.ContentShoulder}</h4>}
+                                        </div>
+                                        <div className=" mb-2  mt-4 d-contents d-sm-flex justify-content-between align-items-center d-print-none">
+                                            <div>
+                                                <DWriters writer={writer} news={state} />
+                                                <p className="pDate "><span>Published:</span> {formatTimestamp(state.created_at)}</p>
+                                            </div>
+
+                                            <div className='d-flex PRINTBTN mb-2'>
+                                                <p className="DTopImgCaption" style={{ paddingRight: '10px', paddingTop: '10px' }}>{state.create_date && banglaDateConvetar(format(new Date(state.create_date), 'dd MMMM yyyy, H:mm'))}</p>
+                                                <div className="DAdditionalInfo">
+                                                    <button type="button" className="printMe" onClick={PrintAble}>
+                                                        <FaPrint />
+                                                    </button>
+
+                                                    <button id="btnDecrease" onClick={() => setFontSize(fontSize - 1)}>
+                                                        <span>A-</span>
+                                                    </button>
+                                                    <button id="btnOriginal" onClick={() => setFontSize(20)}>
+                                                        <span>A</span>
+                                                    </button>
+                                                    <button id="btnIncrease" onClick={() => setFontSize(fontSize + 1)}>
+                                                        <span>A+</span>
+                                                    </button>
                                                 </div>
-                                                <div className=" mb-2  mt-4 d-contents d-sm-flex justify-content-between align-items-center d-print-none">
-                                                    <div>
-                                                        <DWriters writer={writer} news={news} />
-                                                        <p className="pDate "><span>Published:</span> {formatTimestamp(news.created_at)}</p>
+                                                <DSocialShare title={state.AltSocialTitle ? state.AltSocialTitle : state.DetailsHeading} contentID={state.ContentID} />
+                                            </div>
+
+                                        </div>
+
+                                        {state.VideoID !== null && state.VideoID !== '' && state.ShowVideo === 1 ?
+                                            <>
+                                                <div className={state.Tags === null ? "col-sm-12 video-container mt-2" : "col-sm-12 video-container"}>
+                                                    {state.VideoType === "youtube" ?
+                                                        <iframe className="embed-responsive-item" title="youtube-video" src={"https://www.youtube.com/embed/" + state.VideoID + "?autoplay=0"} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+                                                        : state.VideoType === "vimeo" ?
+                                                            <iframe src={"https://player.vimeo.com/video/" + state.VideoID} title="vimeo-video" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                                            : state.VideoType === "facebook" ?
+                                                                <iframe src={"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebookapp%2Fvideos%2F" + state.VideoID + "%2F&show_text=0&width=560"} title="facebook-video" width="560" height="315" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                                                : state.VideoType === "instagram" ?
+                                                                    <iframe className="embed-responsive-item" title="instagram-video" src={"//instagram.com/p/" + state.VideoID + ">/embed"} width="100%" frameBorder="0" scrolling="no" allowtransparency="true"></iframe>
+                                                                    : false}
+                                                </div>
+                                            </> :
+                                            <>
+                                                <div className="DTopImg">
+                                                    <div className="Details">
+                                                        <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} className="img-fluid img100" style={{ width: "100%", height: "auto" }} /></picture>
                                                     </div>
-
-                                                    <div className='d-flex PRINTBTN mb-2'>
-                                                        <p className="DTopImgCaption" style={{ paddingRight: '10px', paddingTop: '10px' }}>{news.create_date && banglaDateConvetar(format(new Date(news.create_date), 'dd MMMM yyyy, H:mm'))}</p>
-                                                        <div className="DAdditionalInfo">
-                                                            <button type="button" className="printMe" onClick={PrintAble}>
-                                                                <FaPrint />
-                                                            </button>
-
-                                                            <button id="btnDecrease" onClick={() => setFontSize(fontSize - 1)}>
-                                                                <span>A-</span>
-                                                            </button>
-                                                            <button id="btnOriginal" onClick={() => setFontSize(20)}>
-                                                                <span>A</span>
-                                                            </button>
-                                                            <button id="btnIncrease" onClick={() => setFontSize(fontSize + 1)}>
-                                                                <span>A+</span>
-                                                            </button>
-                                                        </div>
-                                                        <DSocialShare title={news.AltSocialTitle ? news.AltSocialTitle : news.DetailsHeading} contentID={news.ContentID} />
-                                                        {/* <DSocialShare title={news.DetailsHeading} contentID={news.ContentID} /> */}
+                                                    {/* <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + state.ImageBgPath} alt={state.ContentHeading} title={state.ContentHeading} className="img-fluid img100" /> */}
+                                                    <div className="DetailsTopCap">
+                                                        <p className="DTopImgCaption">{state.ImageBgPathCaption}</p>
                                                     </div>
-
                                                 </div>
 
-                                                {news.VideoID !== null && news.VideoID !== '' && news.ShowVideo === 1 ?
-                                                    <>
-                                                        <div className={news.Tags === null ? "col-sm-12 video-container mt-2" : "col-sm-12 video-container"}>
-                                                            {news.VideoType === "youtube" ?
-                                                                <iframe className="embed-responsive-item" title="youtube-video" src={"https://www.youtube.com/embed/" + news.VideoID + "?autoplay=0"} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
-                                                                : news.VideoType === "vimeo" ?
-                                                                    <iframe src={"https://player.vimeo.com/video/" + news.VideoID} title="vimeo-video" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                                                    : news.VideoType === "facebook" ?
-                                                                        <iframe src={"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebookapp%2Fvideos%2F" + news.VideoID + "%2F&show_text=0&width=560"} title="facebook-video" width="560" height="315" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                                                                        : news.VideoType === "instagram" ?
-                                                                            <iframe className="embed-responsive-item" title="instagram-video" src={"//instagram.com/p/" + news.VideoID + ">/embed"} width="100%" frameBorder="0" scrolling="no" allowtransparency="true"></iframe>
-                                                                            : false}
-                                                        </div>
-                                                    </> :
-                                                    <>
-                                                        <div className="DTopImg">
-                                                            <div className="Details">
-                                                                <picture><img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" style={{ width: "100%", height: "auto" }} /></picture>
-                                                            </div>
-                                                            {/* <img src={process.env.REACT_APP_LAZYL_IMG} data-src={process.env.REACT_APP_IMG_Path + news.ImageBgPath} alt={news.ContentHeading} title={news.ContentHeading} className="img-fluid img100" /> */}
-                                                            <div className="DetailsTopCap">
-                                                                <p className="DTopImgCaption">{news.ImageBgPathCaption}</p>
-                                                            </div>
-                                                        </div>
+                                            </>
+                                        }
 
-                                                    </>
-                                                }
-
-                                                <div className={'ContentDetails page-break  ContentDetails' + news.ContentId} id={"contentDetails"} style={{ fontSize: `${fontSize}px` }}>
-                                                    {/* {(news.ContentDetails).map((nc, idc) => {
-                                                        return (<div dangerouslySetInnerHTML={{ __html: nc }} key={idc}></div>)
-                                                    })} */}
-                                                    {(news.ContentDetails).map((nc, idc) => {
-                                                        return (<>
-                                                            {/* {idc>0 && idc%2==0 ?
-                                                                <div className="d-flex  justify-content-center mb-3">
-                                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
+                                        <div className={'ContentDetails page-break  ContentDetails' + state.ContentId} id={"contentDetails"} style={{ fontSize: `${fontSize}px` }}>
+                                            {(state.ContentDetails)?.map((nc, idc) => {
+                                                return (<>
+                                                    <div dangerouslySetInnerHTML={{ __html: nc }} key={idc}></div>
+                                                </>)
+                                            })}
+                                        </div>
+                                        {state.Tags ?
+                                            <div className="RelatedTags d-print-none">
+                                                <div className="row">
+                                                    <div className="col-sm-12">
+                                                        <p className="Subject"> <FaTag /> Related Subject : </p>
+                                                        {(state.Tags).split(',').map((nc, i) => {
+                                                            // console.log(nc);
+                                                            return (
+                                                                <div className="TagList" key={i}>
+                                                                    <Link to={"/tags/" + nc} onClick={scrollTop}><p>{nc}</p></Link>
                                                                 </div>
-                                                            : ''} */}
-                                                            {/* {idc == 2 ?
-                                                                <div className="d-flex  justify-content-center mb-3" key={idc}>
-                                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                                </div>
-                                                                : ''}
-                                                            {idc == 4 ?
-                                                                <div className="d-flex  justify-content-center mb-3" key={idc}>
-                                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                                </div>
-                                                                : ''} */}
-                                                            <div dangerouslySetInnerHTML={{ __html: nc }} key={idc}></div>
-                                                        </>)
-                                                    })}
+                                                            )
+                                                        })}
+                                                    </div>
                                                 </div>
-                                                {news.Tags ?
+                                            </div> : " "
+                                        }
+                                        {state.faq && state.faq.length > 0 ?
+                                            <>
+                                                <div className="faq-area-section">
                                                     <div className="RelatedTags d-print-none">
                                                         <div className="row">
                                                             <div className="col-sm-12">
-                                                                <p className="Subject"> <FaTag /> Related Subject : </p>
-                                                                {(news.Tags).split(',').map((nc, i) => {
-                                                                    // console.log(nc);
-                                                                    return (
-                                                                        <div className="TagList" key={i}>
-                                                                            <Link to={"/tags/" + nc} onClick={scrollTop}><p>{nc}</p></Link>
-                                                                        </div>
-                                                                    )
-                                                                })}
-                                                            </div>
-                                                        </div>
-                                                    </div> : " "
-                                                }
-                                                {news.faq.length > 0 ?
-                                                    <>
-                                                        <div className="faq-area-section">
-                                                            <div className="RelatedTags d-print-none">
-                                                                <div className="row">
-                                                                    <div className="col-sm-12">
-                                                                        <p className="Subject"> <FaTag /> FAQ : </p>
-                                                                        <div className="faq-area">
-                                                                            <div className="accordion" id="accordionExample">
-                                                                                {news.faq.map((item) => {
-                                                                                    return (
+                                                                <p className="Subject"> <FaTag /> FAQ : </p>
+                                                                <div className="faq-area">
+                                                                    <div className="accordion" id="accordionExample">
+                                                                        {state.faq.map((item) => {
+                                                                            return (
 
-                                                                                        <div className="accordion-item" key={item.id}>
-                                                                                            <h2 className="accordion-header">
-                                                                                                <button
-                                                                                                    className={`accordion-button ${openIndex === item.id ? "" : "collapsed"
-                                                                                                        }`}
-                                                                                                    type="button"
-                                                                                                    onClick={() => toggleAccordion(item.id)}
-                                                                                                >
-                                                                                                    {item.Question}
-                                                                                                </button>
-                                                                                            </h2>
-                                                                                            <div
-                                                                                                className={`accordion-collapse collapse ${openIndex === item.id ? "show" : ""
-                                                                                                    }`}
-                                                                                            >
-                                                                                                <div className="accordion-body">{item.Answer}</div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    )
-                                                                                })}
-                                                                            </div>
-                                                                        </div>
+                                                                                <div className="accordion-item" key={item.id}>
+                                                                                    <h2 className="accordion-header">
+                                                                                        <button
+                                                                                            className={`accordion-button ${openIndex === item.id ? "" : "collapsed"
+                                                                                                }`}
+                                                                                            type="button"
+                                                                                            onClick={() => toggleAccordion(item.id)}
+                                                                                        >
+                                                                                            {item.Question}
+                                                                                        </button>
+                                                                                    </h2>
+                                                                                    <div
+                                                                                        className={`accordion-collapse collapse ${openIndex === item.id ? "show" : ""
+                                                                                            }`}
+                                                                                    >
+                                                                                        <div className="accordion-body">{item.Answer}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            )
+                                                                        })}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </> : ""
-                                                }
-                                                <DfbComment contentID={news.ContentID} />
-
-                                                <div className="adsArea AdsHide mb-5">
-                                                    {Ads ? <img src={Ads} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" /> :
-                                                        <img src={DemoAds} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" />
-                                                    }
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </> : ""
+                                        }
+                                        <DfbComment contentID={state.ContentID} />
 
-                                            <div className="col-lg-4 col-12 d-none d-lg-block detailsPage">
-                                                {/* <div className="d-flex  justify-content-center mb-3">
-                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                </div>
-                                                <div className="d-flex  justify-content-center mt-3">
-                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                </div> */}
-                                                <DCatLatest catLatest={catLatest} catName={catName} />
-                                                {/* <div className="d-flex  justify-content-center mt-3">
-                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                </div>
-                                                <div className="d-flex  justify-content-center mt-3">
-                                                    <Link to="/"><img src={"/media/Advertisement/Advertisement (300X250).png"} alt="Advertisement" title="Advertisement" className="img-fluid img100" /></Link>
-                                                </div> */}
-                                            </div>
-                                        </div>
-
-
-                                        {/* <div className="adsArea AdsHide mb-5">
+                                        <div className="adsArea AdsHide mb-5">
                                             {Ads ? <img src={Ads} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" /> :
                                                 <img src={DemoAds} alt="DeshKalNews.com" title='DeshKalNews.com' className="img-fluid" />
                                             }
+                                        </div>
+                                    </div>
 
-                                        </div> */}
-                                        <div className="col-sm-12 d-print-none">
-                                            <div className="row">
-                                                <div className="col-sm-12">
-                                                    <div className="astrodivider">
-                                                        <div className="astrodividermask"></div>
-                                                        {/* <span><i className="fa fa-chevron-circle-down" aria-hidden="true"></i></span> */}
-                                                        <span><img src={favicon} alt="" className='img-fluid' /></span>
+                                    <div className="col-lg-4 col-12 d-none d-lg-block detailsPage">
+                                        <DCatLatest catLatest={catLatest} catName={catName} />
+                                        <div className="aAds-sticky-area">
+                                            <div className={`aAds-sticky-wrap`} id="ad-box">
+                                                <a href="https://www.shwapno.com/" target='_blank' rel="noreferrer">
+                                                    <div className="DRightSideAddFeature">
+                                                        <img src={Adss} alt="Shwapno.com" title="Shwapno.com" fetchpriority="high" />
                                                     </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         </div>
 
                                     </div>
-                                )
-                            })}
+                                </div>
+                                <div className="col-sm-12 d-print-none">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                            <div className="astrodivider">
+                                                <div className="astrodividermask"></div>
+                                                <span><img src={favicon} alt="" className='img-fluid' /></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </section>
 
                         <section>
