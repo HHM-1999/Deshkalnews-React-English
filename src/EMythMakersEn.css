@@ -1364,7 +1364,49 @@ img.Writer-img {
 	line-height: 34px;
 	position: relative;
 }
+/* about us  */
+.page-english .about-section {
+	padding: 40px 0;
+}
 
+.page-english .about-area {
+	padding-bottom: 20px;
+}
+
+.page-english .about-area h2 {
+	font-size: 23px;
+	line-height: 33px;
+	color: #222;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 500;
+	padding-bottom: 10px;
+}
+
+.page-english .about-area p {
+	font-size: 17px;
+	line-height: 27px;
+	color: #333;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 400;
+}
+
+.page-english .about-area p span {
+	font-size: 17px;
+	line-height: 27px;
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 400;
+}
+.page-english .about-area p span a{
+	color: #333;
+}
+
+.page-english .about-area p span a .ShampratikDeshkal {
+	height: 20px;
+	padding-bottom: 4px;
+}
+.page-english .about-area p span a img {
+	height: 20px;
+}
 /* ======================details page===================== */
 /* .DSecTitle h2 {font-size: 32px;font-weight: bold;line-height: 40px;margin-top: 8px;} */
 .eng-site .DSecTitle h3 {

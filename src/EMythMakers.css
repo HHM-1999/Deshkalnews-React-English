@@ -1447,19 +1447,19 @@ span.mvp-feat1-pop-head {
 	padding-top: 10px;
 }
 
-.SectionTitleEn h3 {
-	font-size: 25px;
-	line-height: 32px;
+.SectionTitleEn h1 {
+	font-size: 25px !important;
+	line-height: 32px !important;
 }
 
 /* about section */
-.about-section {
+.main-site .about-section {
 	display: flex;
 	justify-content: center;
 	padding: 50px 0;
 }
 
-.about-section h2 {
+.main-site .about-section h2 {
 	font-size: 35px;
 	line-height: 45px;
 	color: #04396B;
