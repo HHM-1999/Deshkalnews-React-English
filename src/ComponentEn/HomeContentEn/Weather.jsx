@@ -19,7 +19,7 @@ export default function Weather() {
             .then(({ data }) => {
                 if (data.length > 0) {
                     setList2(data[0]);
-                    setList3(data.slice(1, 4))
+                    setList3(data.slice(1, 5))
                     setTimeout(function () {
                         lazyloaded = false
                         ForLazyLoaderImg(lazyloaded)
@@ -34,7 +34,7 @@ export default function Weather() {
             <div className="row">
                 <div className="col-12">
                     <div className="section-heading d-flex align-items-end">
-                        <h2><Link to="/weather" onClick={scrollTop}><i className="fa-solid fa-chevron-right"></i>Weather</Link> </h2>
+                        <h2><Link to="/weather-and-enviroment" onClick={scrollTop}><i className="fa-solid fa-chevron-right"></i>Weather</Link> </h2>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ export default function Weather() {
                     )
                 })}
                 <div className="seeMore">
-                    <Link className="btn btnMore" to="/weather" onClick={scrollTop}>More...</Link>
+                    <Link className="btn btnMore" to="/weather-and-enviroment" onClick={scrollTop}>More...</Link>
                 </div>
             </div>
 
