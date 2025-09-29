@@ -27,6 +27,7 @@ import Migrant from './HomeContentEn/Migrant';
 import Economy from './HomeContentEn/Economy';
 import VideoHome from './HomeContentEn/VideoHome'
 import VideoHomeMobile from './HomeContentEn/VideoHomeMobile'
+import Events from './HomeContentEn/Events';
 
 
 
@@ -43,6 +44,7 @@ export default function HomeEn() {
             <main>
                 <DocumentTitle title=' Deshkal News | Unbiased & Timely News from Bangladesh' />
                 <HomeLdjsonEn />
+                <Events />
                 <LeadNews />
                 <div className="DTopNewsBottomSection">
                     <div className="container">

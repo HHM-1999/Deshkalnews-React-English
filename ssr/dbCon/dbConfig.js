@@ -8,26 +8,26 @@ const dbPass = 'yTzlVFrIdEjyNfu'
 // const dbUser = 'root'
 // const dbPass = ''
 
-function bnConfig() {
-    const dbConn = mysql.createConnection({
-        host: '10.104.0.3',
-        port: 3306,
-        user: dbUser,
-        password: dbPass,
-        database: 'deshkalnews_content_db',
-        // insecureAuth: true,
-        multipleStatements: true
-    });
-    return {
-        query(sql, args) {
-            return util.promisify(dbConn.query)
-                .call(dbConn, sql, args);
-        },
-        close() {
-            return util.promisify(dbConn.end).call(dbConn);
-        }
-    };
-}
+// function bnConfig() {
+//     const dbConn = mysql.createConnection({
+//         host: '10.104.0.3',
+//         port: 3306,
+//         user: dbUser,
+//         password: dbPass,
+//         database: 'deshkalnews_content_db',
+//         // insecureAuth: true,
+//         multipleStatements: true
+//     });
+//     return {
+//         query(sql, args) {
+//             return util.promisify(dbConn.query)
+//                 .call(dbConn, sql, args);
+//         },
+//         close() {
+//             return util.promisify(dbConn.end).call(dbConn);
+//         }
+//     };
+// }
 function enConfig() {
     const dbConn = mysql.createConnection({
         host: '10.104.0.3',
@@ -91,4 +91,4 @@ function genConfig() {
     };
 }
 
-module.exports = { bnConfig, enConfig, mediaConfig, genConfig };
+module.exports = {  enConfig, mediaConfig, genConfig };

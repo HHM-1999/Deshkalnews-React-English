@@ -23,6 +23,7 @@ import WritersPage from './ComponentEn/WritersEn/WritersPage';
 import VideoGallery from './ComponentEn/Video/VideoGallery'
 import VideoDetails from './ComponentEn/Video/VideoDetails'
 import './EMythMakersEn.css';
+import EventSlug from "./ComponentEn/EventSlug";
 
 
 export default function MainRouterLinkEn() {
@@ -44,6 +45,7 @@ export default function MainRouterLinkEn() {
                 <Route path="/:catSlugEn" element={<Category />} />
                 <Route path="/photo/" element={<PhotoGallery />} />
                 <Route path="/photo/:AlbumID" element={<DetailsPhotoFeature />} />
+                <Route path="/events/:EventSlug" element={<EventSlug />} />
                 <Route path="/videos" element={<VideoGallery />} />
                 <Route path="/videos/:vdoID" element={<VideoDetails />} />
                 <Route path="/tags/:TagTitle" element={<TagPage />} />

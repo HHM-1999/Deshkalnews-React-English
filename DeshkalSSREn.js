@@ -500,6 +500,78 @@ app.get('/about', function (request, response) {
         response.send(data);
     });
 });
+// Event Page SSR
+
+app.get('/events/:EventSlug', async function (request, response) {
+    let EventSlug = request.params.EventSlug;
+    console.log('Events page visited in English site!' + EventSlug);
+    const filePath = path.resolve(__dirname, './build', 'index.html');
+
+    let sql = `SELECT EventID, EventTitle FROM bn_events WHERE Slug=?`;
+    try {
+        const queryData = await enConfig.query(sql, [EventSlug]);
+
+        if (queryData && queryData.length > 0) {
+            let title = queryData[0].EventTitle;
+            let keyword = title.split(" ");
+            keyword = keyword.toString();
+            fs.readFile(filePath, 'utf8', async function (err, data) {
+                if (err) {
+                    return console.log(err);
+                }
+                // ✅ Set language for Bangla site
+
+                data = data.replace(/\$OG_ROBOTS/g, `index, follow`);
+                data = data.replace(/\$OG_TITLE/g, `${title}`);
+                data = data.replace(/\$OG_DESCRIPTION/g, `${title}`);
+                data = data.replace(/\$OG_KEYWORDS/g, `${keyword}`);
+                data = data.replace(/\$AUTHOR/g, "DeshKalNews :: Deshkalnews.com");
+                data = data.replace(/\$OG_IMAGE/g, `${BEndUrl}/media/common/thumb.jpg`);
+                // var fullUrl = request.protocol + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+                // var fullUrl = request.get('x-forwarded-proto') + '://' + request.get('X-Forwarded-Host') + (request.originalUrl).replace(/\/+$/, '');
+                var fullUrl = request.get('x-forwarded-proto') + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+                data = data.replace(/\$OG_URL/g, `${fullUrl}`);
+                response.send(data);
+            });
+        } else {
+            fs.readFile(filePath, 'utf8', function (err, data) {
+                if (err) {
+                    return console.log(err);
+                }
+                data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
+                data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found`);
+                data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found`);
+                data = data.replace(/\$OG_KEYWORDS/g, `404, Nothing Found`);
+                data = data.replace(/\$AUTHOR/g, "DeshKalNews :: Deshkalnews.com");
+                data = data.replace(/\$OG_IMAGE/g, `${BEndUrl}/media/common/thumb.jpg`);
+                // var fullUrl = request.protocol + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+                // var fullUrl = request.get('x-forwarded-proto') + '://' + request.get('X-Forwarded-Host') + (request.originalUrl).replace(/\/+$/, '');
+                var fullUrl = request.get('x-forwarded-proto') + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+                data = data.replace(/\$OG_URL/g, `${fullUrl}`);
+                response.send(data);
+            });
+        }
+    } catch (err) {
+        console.log('Ëvent Page error');
+        console.log(err);
+        fs.readFile(filePath, 'utf8', function (err, data) {
+            if (err) {
+                return console.log(err);
+            }
+            data = data.replace(/\$OG_ROBOTS/g, `noindex, nofollow`);
+            data = data.replace(/\$OG_TITLE/g, `404 - Nothing Found - Something Went Wrong`);
+            data = data.replace(/\$OG_DESCRIPTION/g, `404 - Nothing Found - Something Went Wrong`);
+            data = data.replace(/\$OG_KEYWORDS/g, `404, Nothing Found - Something Went Wrong`);
+            data = data.replace(/\$AUTHOR/g, "DeshKalNews :: Deshkalnews.com");
+            data = data.replace(/\$OG_IMAGE/g, `${BEndUrl}/media/common/thumb.jpg`);
+            // var fullUrl = request.protocol + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+            // var fullUrl = request.get('x-forwarded-proto') + '://' + request.get('X-Forwarded-Host') + (request.originalUrl).replace(/\/+$/, '');
+            var fullUrl = request.get('x-forwarded-proto') + '://' + request.hostname + (request.originalUrl).replace(/\/+$/, '');
+            data = data.replace(/\$OG_URL/g, `${fullUrl}`);
+            response.send(data);
+        });
+    }
+});
 
 // english rss
 app.get('/rss/rss.xml', async function (request, response) {

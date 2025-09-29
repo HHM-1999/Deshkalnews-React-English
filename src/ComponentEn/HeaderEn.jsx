@@ -345,8 +345,10 @@ export default function HeaderEn() {
                   </div>
                   <div className="menu-right header-meta-link">
                     <ul>
-                    <li className="menu-right-item"><Link to="/videos" onClick={scrollTop}><i className="fa-regular fa-circle-play"></i>Videos</Link></li>
-                      <li className="menu-right-item"><Link to="/photo" onClick={scrollTop}><i className="fa-solid fa-camera"></i>
+                    <li className="menu-right-item others"><Link to="/videos" onClick={scrollTop}><i
+                        className="fa-regular fa-circle-play"></i>
+                        Videos</Link></li>
+                      <li className="menu-right-item others"><Link to="/photo" onClick={scrollTop}><i className="fa-solid fa-camera"></i>
                         Photo</Link></li>
                       <li className="menu-right-item bn"><a href="https://bangla.deshkalnews.com/" onClick={scrollTop}><i className="fa-solid fa-globe"></i>
                         বাংলা</a></li>
@@ -364,7 +366,6 @@ export default function HeaderEn() {
                       <div className="search_block">
                         <div className="container">
                           <div className="col-lg p-0">
-
                             <div className="search_logo display-flex">
                               <div className="col-xl">
                                 <form name="q" action="" onSubmit={handelSubmit}>
@@ -376,21 +377,30 @@ export default function HeaderEn() {
                                 </form>
                               </div>
                             </div>
-
-                            {/* <form action="" method="get">
-                                                    <div className="search_logo display-flex">
-                                                        <input type="text" name="title" placeholder="এখানে খুঁজুন..." />
-                                                        <button><i className="fa-solid fa-magnifying-glass"></i></button>
-                                                        <a href="" className="close-search"><i className="fa-solid fa-xmark"></i></a>
-                                                    </div>
-                                                </form> */}
-
                           </div>
                         </div>
                       </div>
                     </div>
                   )
                 }
+              </div>
+            </div>
+            <div className="ScrollMenuMobile">
+              <div className="scroll-category">
+                <div className="container">
+                  <div className="menu-items d-flex">
+                 
+                    <Link onClick={scrollTop} to="/latest">Latest</Link>
+                    <Link onClick={scrollTop} to="/news">News</Link>
+                    <Link onClick={scrollTop} to="/politics">Politics</Link>
+                    <Link onClick={scrollTop} to="/foreign-affairs">Foreign Affairs</Link>
+                    <Link onClick={scrollTop} to="/world">World</Link>
+                    <Link onClick={scrollTop} to="/business">Business</Link>
+                    <Link onClick={scrollTop} to="/sports">Sports</Link>
+                    <Link onClick={scrollTop} to="/videos" className='othercat'><i className="fa-regular fa-circle-play"></i>Videos</Link>
+                    <Link onClick={scrollTop} to="/photo" className='othercat'><i className="fa-solid fa-camera"></i>Photo</Link>
+                  </div>
+                </div>
               </div>
             </div>
 

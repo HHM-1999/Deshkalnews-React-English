@@ -347,7 +347,7 @@ span.publishTime {
 	overflow: hidden;
 }
 
-.DeventsSide h3 {
+.main-site .DeventsSide h3 {
 	font-size: 1.1em;
 	line-height: 25px;
 	font-weight: bold;
@@ -7911,21 +7911,6 @@ span.CategoryPageTitle {
 		overflow: hidden;
 		position: relative;
 	}
-
-	.SportsLead .Heading {
-		padding-bottom: 0px;
-		font-size: 23px;
-		line-height: 33px;
-		font-weight: bold;
-		color: #222;
-		font-family: "SolaimanLipi" !important;
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
 	.slick-next {
 		right: -8px;
 	}
