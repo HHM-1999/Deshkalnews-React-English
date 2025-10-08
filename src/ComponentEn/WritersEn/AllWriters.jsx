@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import DocumentTitle from 'react-document-title'
 import { Link, useParams } from 'react-router-dom'
-import { scrollTop } from '../AllFunctions'
+
 
 export default function AllWriters() {
     let { all_writers } = useParams();

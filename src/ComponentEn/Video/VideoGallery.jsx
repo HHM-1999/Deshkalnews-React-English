@@ -15,7 +15,7 @@ var showMore = true
 export default function VideoGallery() {
     const [leadVideoTop, setLeadVideoTop] = useState([]);
     const [leadVideos, setLeadVideos] = useState([]);
-    const [state3, setState3] = useState([])
+    // const [state3, setState3] = useState([])
     const [showBtnForMoreNews, setShowBtnForMoreNews] = useState(true);
     const [news, setNews] = useState([]);
     // const [isLoading, setisLoading] = useState(true)
@@ -36,7 +36,7 @@ export default function VideoGallery() {
                     // setisLoading(false)
                     setLeadVideoTop(data.webVideos[0])
                     setLeadVideos(data.webVideos.slice(1, 4))
-                    setState3(data.webVideos.slice(4, 12))
+                    // setState3(data.webVideos.slice(4, 12))
                     if (data.webVideos.length < limit) {
                         setShowBtnForMoreNews(false)
                     }
