@@ -88,7 +88,7 @@ export default function VideoGallery() {
                 <div className="container">
                     <div className="DTitle">
                         <Link to={+ '/'} onClick={scrollTop}>
-                            <div className="DTitleInner"><h1 className="DTitleInnerBar"><span>Video Gallery</span></h1></div>
+                            <div className="DTitleInner"><h1 className="DTitleInnerBar">Video Gallery</h1></div>
                         </Link>
                         <DocumentTitle title='Deshkalnews.com :: Video Gallery' />
                         <VideoLdJson />

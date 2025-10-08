@@ -92,7 +92,7 @@ export default function Latest() {
                 <div className="TopHomeSection"></div>
                 <DocumentTitle title="Latest news, Breaking news | DeshkalNews.com" />
                 <LatestLdJson />
-                <h1 className="DTitle"><Link to="/latest"><span className="DTitleInner"><span className="DTitleInnerBar"><span>All News</span></span></span></Link></h1>
+                <div className="DTitle"><Link to="/latest"><div className="DTitleInner"><h1 className="DTitleInnerBar">All News</h1></div></Link></div>
                 <div className="row archiveSection">
                     {news.map((nc) => {
                         return (

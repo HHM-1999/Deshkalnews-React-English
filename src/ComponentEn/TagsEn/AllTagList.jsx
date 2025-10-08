@@ -24,11 +24,11 @@ export default function AllTagList() {
             <div className="container">
                 <div className="TopHomeSection"></div>
                 <DocumentTitle title='All Tags :: DeshKalNews.com' />
-                <h1 className="DTitle">
+                <div className="DTitle">
                     <Link to={+ '/'} onClick={scrollTop}>
-                        <span className="DTitleInner"><span className="DTitleInnerBar"><span>All Tags</span></span></span>
+                        <div className="DTitleInner"><h1 className="DTitleInnerBar">All Tags</h1></div>
                     </Link>
-                </h1>
+                </div>
                 <div className="DTagListArea mb-5">
                     <ul className="row">
                         {allTags.map((nc) => {

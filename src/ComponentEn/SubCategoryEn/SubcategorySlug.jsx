@@ -105,17 +105,16 @@ export default function SubCategory() {
     return (
         <main>
             <div className="container">
-                <h1 className="DTitle">
-                    {/* <Link to="/" onClick={scrollTop}> */}
-                    <span className="DTitleInner">
-                        <span className="DTitleInnerBar">
-                            <span>{subCatName.CategoryName}</span>
-                        </span>
-                    </span>
+                <div className="DTitle">
+                    <div className="DTitleInner">
+                        <h1 className="DTitleInnerBar">
+                         {subCatName.CategoryName}
+                        </h1>
+                    </div>
                     {/* </Link> */}
                     <DocumentTitle title={`${subCatName.CategoryName} | ${subCatName.CategoryName} Latest News ::  DeshkalNews.com`} />
                     <SubCatLdJson CatNames={CatName} CatNameSlug={CatSlug} SubCatNames={subCatName.CategoryName} SubCatNameSlug={subCatName.Slug} />
-                </h1>
+                </div>
 
                 <section>
                     <div className="row">

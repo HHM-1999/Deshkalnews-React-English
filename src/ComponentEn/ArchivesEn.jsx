@@ -176,7 +176,7 @@ export default function ArchivesEn() {
                 <div className="TopHomeSection"></div>
                 <DocumentTitle title="Archive | All important old news and records" />
                 <ArchiveLdJson />
-                <h1 className="DTitleEng"><Link to="/archives"><span className="DTitleInner"><span className="DTitleInnerBar"><span>Archieves</span></span></span></Link></h1>
+                <div className="DTitleEng"><Link to="/archives"><div className="DTitleInner"><h1 className="DTitleInnerBar">Archieves</h1></div></Link></div>
                 <div className="row">
                     <div className="col-sm-12 my-4">
                         <form className="form-inline" onSubmit={resultSubmit}>

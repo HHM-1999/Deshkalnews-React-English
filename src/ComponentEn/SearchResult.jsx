@@ -83,7 +83,7 @@ export default function SearchResult() {
                 <div className="container">
                     <div className="TopHomeSection"></div>
                     <DocumentTitle title="Search" />
-                    <h2 className="mvp-feat1-pop-head"><a href={"/search/" + searchValue} onClick={scrollTop}><span className="mvp-feat1-pop-head">Search</span></a></h2>
+                    <h1 className="mvp-feat1-pop-head"><a href={"/search/" + searchValue} onClick={scrollTop}><span className="mvp-feat1-pop-head">Search</span></a></h1>
 
                     {!searchValue ?
                         <><h1 className='ErrorHeader'>Page not found</h1>

@@ -1618,6 +1618,7 @@ span.mvp-feat1-pop-head {
 .policy-details h2 {
 	font-size: 18px;
 	padding-bottom: 5px;
+	color: #333;
 }
 
 .policy-details p {
@@ -6273,9 +6274,6 @@ span.CategoryPageTitle {
 	display: inline-block;
 	padding: 0;
 	background: #fff;
-}
-
-.main-site .DTitleInner span {
 	color: #db0303;
 	font-size: 24px;
 	font-weight: 600;

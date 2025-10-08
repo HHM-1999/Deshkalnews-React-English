@@ -107,7 +107,7 @@ export default function Category() {
                     {/* <Link to={`/${catName.Slug}`} onClick={scrollTop}> */}
                     <div className="DTitleInner">
                         <h1 className="DTitleInnerBar">
-                            <span>{catName.CategoryName}</span>
+                            {catName.CategoryName}
                         </h1>
                     </div>
                     <DocumentTitle title={`${catName?.DisplayCatName ? catName.DisplayCatName : catName?.CategoryName +" Latest News ::  DeshKalNews.com"}`} />

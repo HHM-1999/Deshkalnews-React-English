@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
                 <div className="container">
                     <div className="TopHomeSection"></div>
                     <DocumentTitle title=' DeshKalNews.com ::  Privacy Policy' />
-                    <div className="SectionTitleEn"><h3><Link to="/privacy-policy" onClick={scrollTop}><span className="ColorBox"></span>Privacy Policy</Link></h3></div>
+                    <div className="SectionTitleEn"><h1><Link to="/privacy-policy" onClick={scrollTop}><span className="ColorBox"></span>Privacy Policy</Link></h1></div>
 
                     <div className='row mt-5 '>
                         <div className='col-lg-8'>

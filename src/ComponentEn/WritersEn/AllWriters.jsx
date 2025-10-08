@@ -24,11 +24,11 @@ export default function AllWriters() {
             <div className="container">
                 <div className="TopHomeSection"></div>
                 <DocumentTitle title='DeskKalNews.com :: All Writers' />
-                <h1 className="DTitle">
-                    <Link to={'/'} onClick={scrollTop}>
-                        <span className="DTitleInner"><span className="DTitleInnerBar"><span>All Writers</span></span></span>
-                    </Link>
-                </h1>
+                <div className="DTitle">
+                  
+                        <div className="DTitleInner"><h1 className="DTitleInnerBar">All Writers</h1></div>
+                
+                </div>
                 <div className="DTagListArea mb-5">
                     <ul className="row">
                         {allWriter.map((nc) => {

@@ -245,7 +245,7 @@ export default function HeaderEn() {
                         </li>
                         {/* <li className="nav-item"><Link className="nav-link" to="/special-report" onClick={scrollTop}>Special Report </Link></li> */}
                         <li className="nav-item"><Link className="nav-link" to="/politics" onClick={scrollTop}>Politics</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/foreign-affairs" onClick={scrollTop}>Foreign Affairs</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/foreign-affairs" onClick={scrollTop}>Int’l Relations</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/world" onClick={scrollTop}>World</Link></li>
                         <li className="nav-item dropdown">
                           <Link onClick={scrollTop} to="/business" className="nav-link dropdown-toggle" data-toggle="dropdown disable" role="button" aria-haspopup="true" aria-expanded="false">Business</Link>
@@ -393,7 +393,7 @@ export default function HeaderEn() {
                     <Link onClick={scrollTop} to="/latest">Latest</Link>
                     <Link onClick={scrollTop} to="/news">News</Link>
                     <Link onClick={scrollTop} to="/politics">Politics</Link>
-                    <Link onClick={scrollTop} to="/foreign-affairs">Foreign Affairs</Link>
+                    <Link onClick={scrollTop} to="/foreign-affairs">Int’l Relations</Link>
                     <Link onClick={scrollTop} to="/world">World</Link>
                     <Link onClick={scrollTop} to="/business">Business</Link>
                     <Link onClick={scrollTop} to="/sports">Sports</Link>

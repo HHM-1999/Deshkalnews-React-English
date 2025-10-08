@@ -98,13 +98,11 @@ export default function PhotoGallery() {
 
             <main>
                 <div className="container">
-                    <h1 className="DTitle">
-                        <Link to={+ '/'} onClick={scrollTop}>
-                            <span className="DTitleInner"><span className="DTitleInnerBar"><span>Photo Gallery</span></span></span>
-                        </Link>
+                    <div className="DTitle">
+                        <div className="DTitleInner"><h1 className="DTitleInnerBar">Photo Gallery</h1></div>
                         <DocumentTitle title='News in Pictures | Photojournalism and Photo Reporting' />
                         <PhotoGalleryLdJson />
-                    </h1>
+                    </div>
                     <div className="row">
                         <div className="col-lg-9 mt-3 ">
                             <div className="DcatTopArea">
@@ -119,11 +117,11 @@ export default function PhotoGallery() {
                                                                 <div className="">
                                                                     {VideoNews1.thumbnail == null ?
                                                                         <picture>
-                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={VideoNews1.TitleEn} title={VideoNews1.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100"  />
+                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={VideoNews1.TitleEn} title={VideoNews1.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                         </picture> :
                                                                         <picture>
-                                                                            <img src={process.env.REACT_APP_IMG_Path + VideoNews1.thumbnail} alt={VideoNews1.TitleEn} title={VideoNews1.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                            <img src={process.env.REACT_APP_IMG_Path + VideoNews1.thumbnail} alt={VideoNews1.TitleEn} title={VideoNews1.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                         </picture>}
                                                                     {VideoNews1.ShowVideo === 1 && <div className="card-video-icon big transition"><i className="fa-solid fa-play"></i> </div>}
@@ -152,11 +150,11 @@ export default function PhotoGallery() {
                                                             <div className="">
                                                                 {VideoNews2.thumbnail == null ?
                                                                     <picture>
-                                                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={VideoNews2.TitleEn} title={VideoNews2.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                        <img src={process.env.REACT_APP_LAZYL_IMG} alt={VideoNews2.TitleEn} title={VideoNews2.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                     </picture> :
                                                                     <picture>
-                                                                        <img src={process.env.REACT_APP_IMG_Path + VideoNews2.thumbnail} alt={VideoNews2.TitleEn} title={VideoNews2.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                        <img src={process.env.REACT_APP_IMG_Path + VideoNews2.thumbnail} alt={VideoNews2.TitleEn} title={VideoNews2.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                     </picture>}
 
@@ -186,11 +184,11 @@ export default function PhotoGallery() {
                                                                 <div className="">
                                                                     {nc.thumbnail == null ?
                                                                         <picture>
-                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.TitleEn} title={nc.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                            <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.TitleEn} title={nc.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                         </picture> :
                                                                         <picture>
-                                                                            <img src={process.env.REACT_APP_IMG_Path + nc.thumbnail} alt={nc.TitleEn} title={nc.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                            <img src={process.env.REACT_APP_IMG_Path + nc.thumbnail} alt={nc.TitleEn} title={nc.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                         </picture>}
 
@@ -229,11 +227,11 @@ export default function PhotoGallery() {
                                                                     <div className="">
                                                                         {nc.thumbnail == null ?
                                                                             <picture>
-                                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.TitleEn} title={nc.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                                <img src={process.env.REACT_APP_LAZYL_IMG} alt={nc.TitleEn} title={nc.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                             </picture> :
                                                                             <picture>
-                                                                                <img src={process.env.REACT_APP_IMG_Path + nc.thumbnail} alt={nc.TitleEn} title={nc.TitleEn} style={{width: "100%", height:"auto"}} className="img-fluid img100" />
+                                                                                <img src={process.env.REACT_APP_IMG_Path + nc.thumbnail} alt={nc.TitleEn} title={nc.TitleEn} style={{ width: "100%", height: "auto" }} className="img-fluid img100" />
 
                                                                             </picture>}
 
