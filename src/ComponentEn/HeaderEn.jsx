@@ -350,7 +350,7 @@ export default function HeaderEn() {
                         Videos</Link></li>
                       <li className="menu-right-item others"><Link to="/photo" onClick={scrollTop}><i className="fa-solid fa-camera"></i>
                         Photo</Link></li>
-                      <li className="menu-right-item bn"><a href="https://bangla.deshkalnews.com/" onClick={scrollTop}><i className="fa-solid fa-globe"></i>
+                      <li className="menu-right-item bn"><a href="https://bangla.karikori.com/" onClick={scrollTop}><i className="fa-solid fa-globe"></i>
                         বাংলা</a></li>
                       <li className="menu-right-item menu-search">
                         <span className="nav-link nav-link-search" onClick={setToggle}>

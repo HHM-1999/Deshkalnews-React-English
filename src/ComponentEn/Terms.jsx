@@ -13,7 +13,7 @@ export default function Terms() {
                 <div className="container">
                     <div className="TopHomeSection"></div>
                     <DocumentTitle title=' DeskalNews.com ::   Terms and Conditions ' />
-                    <div className="SectionTitleEn"><h3><Link to="/terms-conditions" onClick={scrollTop}><span className="ColorBox"></span>Terms And Conditions for DeshKalNews.com</Link></h3></div>
+                    <div className="SectionTitleEn"><h1><Link to="/terms-conditions" onClick={scrollTop}><span className="ColorBox"></span>Terms And Conditions for DeshKalNews.com</Link></h1></div>
                     <div className='row mt-5'>
                         <div className='col-lg-8 col-12'>
                             <div className="policy-details">
