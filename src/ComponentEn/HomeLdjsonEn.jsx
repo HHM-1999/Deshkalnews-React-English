@@ -9,7 +9,7 @@ export default function HomeLdjsonEn() {
                 {`
                     {
                         "name":"deshkalnews.com",
-                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}english",
+                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
                         "logo":{
                             "@context":"http://schema.org",
                             "@type":"ImageObject",
@@ -39,7 +39,7 @@ export default function HomeLdjsonEn() {
                                 "@type": "ListItem",
                                 "position": 1,
                                 "name": "Home",
-                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}english"
+                                "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}"
                             }
                         ]
                     }
@@ -52,7 +52,7 @@ export default function HomeLdjsonEn() {
                     {
                         "@context":"http://schema.org",
                         "@type":"Website",
-                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}english",
+                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
                         "interactivityType":"mixed",
                         "name":"Deshkal News English",
                         "headline":"DeshkalNews.com | Latest Bangladesh and World News | Breaking Updates",
@@ -63,12 +63,12 @@ export default function HomeLdjsonEn() {
                         },
                         "potentialAction":{
                             "@type":"SearchAction",
-                            "target":"${process.env.REACT_APP_FONT_DOMAIN_URL}english/search/{query}",
+                            "target":"${process.env.REACT_APP_FONT_DOMAIN_URL}search/{query}",
                             "query-input":"required name=query"
                         },
                         "mainEntityOfPage":{
                             "@type":"WebPage",
-                            "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}english"
+                            "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}"
                         }
                     }
                        
@@ -90,7 +90,7 @@ export default function HomeLdjsonEn() {
                             "addressCountry": "BD"
                           },
                           "telephone": "+880 2-41062939",
-                          "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}english",
+                          "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
                           "openingHours": [
                             "Mo-Su 00:00-23:59"
                           ]
