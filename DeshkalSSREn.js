@@ -108,7 +108,7 @@ app.get('/ads.txt', function (request, response) {
             return console.log(err);
         }
         // ✅ Set language for Bangla site
-        data = data.replace(/\$HTML_LANG/g, "bn");
+        data = data.replace(/\en/g, "en");
         response.send(data);
     });
 });
@@ -122,7 +122,7 @@ app.get('/google7e2046947495bf19.html', function (request, response) {
             return console.log(err);
         }
         // ✅ Set language for Bangla site
-        data = data.replace(/\$HTML_LANG/g, "bn");
+        data = data.replace(/\$en/g, "en");
         response.send(data);
     });
 });

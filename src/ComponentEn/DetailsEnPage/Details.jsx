@@ -13,7 +13,7 @@ import DSocialShare from './DSocialShare'
 import DocumentTitle from 'react-document-title'
 import { FaPrint, FaTag } from 'react-icons/fa'
 import Adsss from '../../assets/media/Advertisement/Advertisement(728X90).png'
-import Ads from '../../assets/media/Advertisement/300 x250 - Details.jpg';
+// import Ads from '../../assets/media/Advertisement/300 x250 - Details.jpg';
 import DemoAds from '../../assets/media/Advertisement/demo(728x90).png'
 import favicon from '../../assets/media/common/favicon.png'
 import ErrorPageEn from '../ErrorPageEn'
@@ -504,13 +504,13 @@ export default function Details() {
 
                                     <div className="col-lg-4 col-12 d-none d-lg-block detailsPage">
                                         <DCatLatest catLatest={catLatest} catName={catName} />
-                                        <div className="Ads-area sticky-ads">
+                                        {/* <div className="Ads-area sticky-ads">
                                             <a href="https://www.shwapno.com/" target='_blank' rel="noreferrer">
                                                 <div className="DRightSideAddFeature">
                                                     <img src={Ads} alt="Shwapno.com" title="Shwapno.com" fetchpriority="high" />
                                                 </div>
                                             </a>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>

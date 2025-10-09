@@ -70,7 +70,7 @@ export default function HeaderEn() {
                 <div className="col-12 col-md-6 d-flex align-items-start justify-content-start">
                   <div className="DLogo">
                     <a href="/"><img className="img-fluid img100" src={Logo}
-                      alt="DeshkalNews.com :: দেশকালনিউজ.কম" title="DeshkalNews.com :: দেশকালনিউজ.কম" style={{ width: "300px", height: "35px" }} /></a>
+                      alt="DeshkalNews :: DeshkalNews.com" title="DeshkalNews :: DeshkalNews.com" style={{ width: "300px", height: "35px" }} /></a>
                   </div>
                 </div>
                 <div className="col-3 col-md-6 d-flex align-items-center justify-content-end">

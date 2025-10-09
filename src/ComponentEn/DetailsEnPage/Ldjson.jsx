@@ -126,7 +126,7 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                             "logo":{
                                 "@context":"http://schema.org",
                                 "@type":"ImageObject",
-                                "author":"DeshKalNews.com :: দেশকালনিউজ.কম",
+                                "author":"DeshKalNews :: DeshkalNews.com",
                                 "contentUrl":"${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
                                 "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
                                 "name":"logo",

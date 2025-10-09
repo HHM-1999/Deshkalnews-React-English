@@ -9,7 +9,7 @@ export default function English() {
             <main>
                
 
-                    <DocumentTitle title='DeshKalNews.com :: দেশকালনিউজ.কম' />
+                    <DocumentTitle title='DeshKalNews :: DeshkalNews.com' />
             
                 <div className="container">
 

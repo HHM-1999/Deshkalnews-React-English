@@ -9,7 +9,7 @@ export default function VideoLdJson() {
                 {
                     "@context": "https://schema.org",
                     "@type": "CollectionPage",
-                    "name": "দেশকালনিউজ.কম :: ভিডিও গ্যালারী",
+                    "name": "DeshkalNews.com ::Video Gallery",
                     "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}videos",
                     "breadcrumb": {
                         "@type": "BreadcrumbList",
