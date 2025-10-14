@@ -56,7 +56,7 @@ export default function HomeLdjsonEn() {
                 ],
                 "potentialAction": {
                     "@type": "SearchAction",
-                "target": "${process.env.REACT_APP_FONT_DOMAIN_URL}search/{query}",
+                "target": "${process.env.REACT_APP_FONT_DOMAIN_URL}search/",
                 "query-input": "required name=query"}}
                 `}
             </script>
