@@ -4,30 +4,63 @@ import { Helmet } from "react-helmet";
 export default function HomeLdjsonEn() {
     return (
         <Helmet>
-            {/* <!-- Organization Schema --> */}
+            {/* <!--Organization Schema -->  */}
             <script type="application/ld+json">
-                {`
-                    {
-                        "name":"deshkalnews.com",
-                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
-                        "logo":{
-                            "@context":"http://schema.org",
-                            "@type":"ImageObject",
-                            "author":"Deshkal News: Deshkalnews.com",
-                            "contentUrl":"${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
-                            "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
-                            "name":"logo",
-                            "width":"250",
-                            "height":"99"
-                        },
-                        "sameAs":[
-                            
-                        ],
-                        "@type":"Organization",
-                        "@context":"http://schema.org"
-                    }  
+                {`{
+                    "@context": "https://schema.org",
+                "@type": "NewsMediaOrganization",
+                "name": "Deshkal News",
+                "alternateName": "দেশকাল নিউজ",
+                "url": "https://deshkalnews.com",
+                "logo": {
+                    "@type": "ImageObject",
+                "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
+                "width": 300,
+                "height": 300
+                },
+                "foundingDate": "2024-01-01",
+                "founder": {
+                    "@type": "Person",
+                "name": "Eliash Uddin Palash",
+                "jobTitle": "Founder & Editor-in-Chief",
+                "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}about"},
+                "publisher": {
+                    "@type": "Organization",
+                "name": "Deshkal News English",
+                "logo": {
+                    "@type": "ImageObject",
+                "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png"}},
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                "contactType": "Editorial",
+                "email": "info@deshkalnews.com",
+                "url": "${process.env.REACT_APP_FONT_DOMAIN_URL}contact-us"},
+                "address": {
+                    "@type": "PostalAddress",
+                "streetAddress": "11/8/D (2nd Floor), Paradise Maria, Free School St",
+                "addressLocality": "Dhaka",
+                "postalCode": "1205",
+                "addressRegion": "Dhaka",
+                "addressCountry": "BD"},
+                "telephone": "+880241062939",
+                "inLanguage": "en",
+                "description": "Deshkal News is a trusted Bangladeshi news platform publishing national and international stories in both English and Bangla.",
+                "headline": "Deshkal News - Reliable Source for National and International News",
+                "sameAs": [
+                "https://www.facebook.com/DeshkalNews24",
+                "https://www.instagram.com/Deshkalnews",
+                "https://x.com/Deshkalnews",
+                "https://www.youtube.com/@DeshkalNews24",
+                "https://www.linkedin.com/company/deshkal-news",
+                "https://www.threads.net/@deshkalnews"
+                ],
+                "potentialAction": {
+                    "@type": "SearchAction",
+                "target": "${process.env.REACT_APP_FONT_DOMAIN_URL}search/{query}",
+                "query-input": "required name=query"}}
                 `}
             </script>
+
             {/* <!-- Breadcrumb Schema --> */}
             <script type="application/ld+json">
                 {`
@@ -42,59 +75,6 @@ export default function HomeLdjsonEn() {
                                 "item": "${process.env.REACT_APP_FONT_DOMAIN_URL}"
                             }
                         ]
-                    }
-                       
-                `}
-            </script>
-            {/* Website Schema  */}
-            <script type="application/ld+json">
-                {`
-                    {
-                        "@context":"http://schema.org",
-                        "@type":"Website",
-                        "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
-                        "interactivityType":"mixed",
-                        "name":"Deshkal News English",
-                        "headline":"DeshkalNews.com | Latest Bangladesh and World News | Breaking Updates",
-                        "keywords":"Deshkal News, Bangladesh news, latest news, breaking news, national news, politics, international news, sports news, entertainment, economy, technology, opinion, jobs news",
-                        "copyrightHolder":{
-                            "@type":"Organization",
-                            "name":"Deshkal News"
-                        },
-                        "potentialAction":{
-                            "@type":"SearchAction",
-                            "target":"${process.env.REACT_APP_FONT_DOMAIN_URL}search/{query}",
-                            "query-input":"required name=query"
-                        },
-                        "mainEntityOfPage":{
-                            "@type":"WebPage",
-                            "@id":"${process.env.REACT_APP_FONT_DOMAIN_URL}"
-                        }
-                    }
-                       
-                `}
-            </script>
-            <script type="application/ld+json">
-                {`
-                    {
-                        "@context":"http://schema.org",
-                        "@type":"LocalBusiness",
-                        "name":"Deshkal News English",
-                        "image":"${process.env.REACT_APP_FONT_DOMAIN_URL}media/common/logo.png",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "streetAddress": "11/8/D (2nd Floor), Paradise Maria, Free School St",
-                            "addressLocality": "Dhaka",
-                            "postalCode": "1205",
-                            "addressRegion": "Dhaka",
-                            "addressCountry": "BD"
-                          },
-                          "telephone": "+880 2-41062939",
-                          "url":"${process.env.REACT_APP_FONT_DOMAIN_URL}",
-                          "openingHours": [
-                            "Mo-Su 00:00-23:59"
-                          ]
-                        }
                     }
                        
                 `}
