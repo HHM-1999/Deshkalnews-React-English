@@ -364,7 +364,6 @@ export default function Details() {
 
                         <section id="newsSection">
                             <div className="newsDetail" id={state.ContentID} data-title={state.DetailsHeading} key={state.ContentID}>
-
                                <Ldjson news={state} catName={catName} catSlugEn={catSlugEn} DisplayCatName={DisplayCatName} />
                                 <div className="row mt-2">
                                     <div className="col-lg-8 col-12">
