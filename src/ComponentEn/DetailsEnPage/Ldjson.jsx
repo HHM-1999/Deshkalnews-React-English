@@ -31,7 +31,8 @@ export default function Ldjson({ news, catName, catSlugEn,DisplayCatName }) {
                         "dateModified": "${convertToBSTISOString(news.ModifiedDate)}",
                         "author": {
                           "@type": "Organization",
-                          "name": "Deshkal News"
+                          "name": "Deshkal News Desk",
+                          "url": "https://www.deshkalnews.com/"
                         },
                         "publisher": {
                           "@type": "Organization",
